@@ -1,5 +1,5 @@
 ---
-title: "The People With the Most to Say About AI Are Not in Tech"
+title: "The people with the most to say about AI are not in tech"
 description: "The tech industry's AI conversation is shaped by its own incentive structures. The people with the deepest expertise — and the most leverage — are outside of it."
 pubDate: "Feb 23 2026"
 heroImage: "../../assets/castoro-cellars.jpg"

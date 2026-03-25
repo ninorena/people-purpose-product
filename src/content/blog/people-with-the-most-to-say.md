@@ -50,9 +50,3 @@ The risk isn't that mission-driven organizations will fall behind on AI adoption
 The tech industry will keep building. That's what it does. The question is whether the people with the deepest understanding of the problems worth solving will have a hand in shaping what gets built next, or whether they'll be handed finished products that were designed for someone else's priorities.
 
 You don't need to become a technologist to have that hand. You need to bring what you already know to the table. The tools are ready. The leverage is yours.
-
-### **Let's Build Something That Matters**
-
-At [Crow Flies](http://crowflies.dev), we work with mission-driven organizations to turn deep expertise into products that actually serve the people they're meant to help. We start with what you know — your mission, your community, your understanding of the problem — and help you build technology that works *for* that mission, not around it.
-
-If you're thinking about how AI and software fit into the impact you want to create, I’d love to talk.

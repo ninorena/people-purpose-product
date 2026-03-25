@@ -62,7 +62,3 @@ AI gave us all access to the same "magic wand." The difference isn't the tools. 
 The people closest to real problems have always had the expertise. Now you have tools that caught up to it.
 
 So what are you doing with your new magic wand?
-
----
-
-*If you're wrestling with how to experiment responsibly with AI in your mission-driven work, or if you're trying to figure out what to build next, [let's talk](https://crowflies.dev/contact). We partner with organizations using tech for impact to turn domain expertise into products that serve communities.*

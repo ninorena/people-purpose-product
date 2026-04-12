@@ -87,6 +87,8 @@ Nick will preview all changes locally (`npm run dev`) before anything goes live.
 
 ## Open Questions
 
-- Which scheduling tool does Nick want to link to on the Work With Us page? (Calendly, Cal.com, other?)
-- Does Nick want to add his photo to the About page, or keep it text-only for now?
-- Should the Kromatic client logos appear on the homepage, or just client names as text?
+*All resolved.*
+
+- **Scheduling tool:** Google Calendar scheduling link. Embed preferred over a plain link — use the GCal embed widget, styled to match the site. Nick will supply the embed code/URL.
+- **About page photo:** Text-only at launch. Reserve a clearly marked placeholder element (e.g., a `<div class="photo-placeholder">`) so the photo can be dropped in later without layout changes.
+- **Kromatic logos:** Target logos on the homepage, but Nick must review each before they ship. Launch with text-only client names as the default; add a `<!-- TODO: replace with logo once approved -->` comment on each entry so the swap is trivial.

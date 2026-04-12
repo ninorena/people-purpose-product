@@ -1,0 +1,142 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+---
+
+<MarketingLayout
+	title="AI for Impact — People/Purpose/Product"
+	description="Our stance on AI: a lever for mission-driven work, not a replacement for domain expertise or human judgment."
+>
+	<section class="page-header">
+		<h1>AI for impact,<br />not extraction.</h1>
+		<p class="subhead">
+			Here's what we actually believe about AI — and how it shapes the way we work.
+		</p>
+	</section>
+
+	<section class="content-section">
+		<h2>Our position</h2>
+		<p>
+			AI is the most significant shift in who can build software since cloud computing.
+			That's not hype — it's a structural change. Organizations that couldn't afford a
+			development team two years ago can now build real products. The question is whether
+			they'll build ones that serve people, or ones that extract from them.
+		</p>
+		<p>
+			We think domain expertise is the differentiator. AI amplifies whatever is already there.
+			If you know your community, your programs, and your problem deeply — AI makes you faster,
+			more capable, and harder to replicate. If you don't, AI just makes you faster at building
+			the wrong thing.
+		</p>
+	</section>
+
+	<section class="content-section">
+		<h2>What AI changes</h2>
+		<p>
+			For mission-driven organizations, the practical change is this: the cost of building
+			a custom digital product has dropped significantly. Things that used to require a
+			full engineering team and a six-figure budget are now within reach for organizations
+			with modest technical capacity.
+		</p>
+		<p>
+			That opens up options. You don't have to choose between an expensive custom build and
+			a vendor product that wasn't designed for your population. You can build something
+			that fits — and own it.
+		</p>
+	</section>
+
+	<section class="content-section">
+		<h2>What AI doesn't change</h2>
+		<p>
+			Judgment. Relationships. Community trust. The hard-won knowledge of what your
+			constituents actually need versus what they ask for.
+		</p>
+		<p>
+			AI doesn't know your programs, your population, or the decade of context your team
+			carries. It doesn't replace the product thinking that turns a feature list into
+			something people actually use. And it has no stake in the outcome. You do.
+		</p>
+		<p>
+			Tools that promise to automate away that expertise are selling something. We're not.
+		</p>
+	</section>
+
+	<section class="content-section">
+		<h2>How we use it</h2>
+		<p>
+			AI is woven into how we work — not bolted on as a feature. We use it to move faster,
+			explore more options, and reduce the cost of iteration. But every significant decision
+			still comes back to humans who understand the problem.
+		</p>
+		<p>
+			More importantly, we teach clients to use it. By the time an engagement ends,
+			your team should be able to maintain, extend, and adapt what we built together —
+			without coming back to us. Dependency is the failure mode we're actively trying to avoid.
+		</p>
+	</section>
+
+	<section class="content-section closing">
+		<p>If this framing resonates, let's talk.</p>
+		<a href="/work-with-us" class="cta-button">Work with us →</a>
+	</section>
+</MarketingLayout>
+
+<style>
+	.page-header {
+		padding: 3em 0 2.5em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3em;
+	}
+	.page-header h1 {
+		font-size: 3rem;
+		line-height: 1.1;
+		margin-bottom: 0.4em;
+	}
+	.subhead {
+		font-size: 1.15rem;
+		color: rgb(var(--gray));
+		max-width: 600px;
+	}
+
+	.content-section {
+		margin-bottom: 3em;
+		padding-bottom: 3em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		max-width: 720px;
+	}
+	.content-section h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.75em;
+	}
+
+	.closing {
+		text-align: left;
+		border-bottom: none;
+	}
+	.closing p {
+		font-size: 1.2rem;
+		margin-bottom: 1em;
+		color: rgb(var(--gray-dark));
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: var(--accent);
+		color: white;
+		padding: 0.75em 1.5em;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 1rem;
+		transition: background 0.2s ease;
+	}
+	.cta-button:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+
+	@media (max-width: 720px) {
+		.page-header h1 {
+			font-size: 2.25rem;
+		}
+	}
+</style>

@@ -1,29 +1,150 @@
 ---
-import AboutHeroImage from '../assets/nick-noreña.jpeg';
-import Layout from '../layouts/BlogPost.astro';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
 ---
 
-<Layout
-	title="About Me"
-	description="About the author and what he does"
-	pubDate={new Date('Feb 10 2026')}
-	heroImage={AboutHeroImage}
+<MarketingLayout
+	title="About — People/Purpose/Product"
+	description="People/Purpose/Product is a product studio working with mission-driven organizations to build software that creates real impact."
 >
-	<p>
-		Hi there, I'm Nick Noreña, and I write about the intersection of people, purpose, and product.
-	</p>
+	<section class="page-header">
+		<h1>About</h1>
+	</section>
 
-	<p>
-		As a child of the 90s, I had a great vantage point for watching the internet and consumer software proliferate across businesses and households. From playing minesweeper on my family's Compaq, to chatting with friends on AIM ("theyankeeswin1111" for the curious), I got sucked into the global experiment exploring how people interacted with software.
-	</p>
+	<section class="content-section team-section">
+		<h2>Nick Noreña</h2>
+		<div class="person">
+			<!-- TODO: replace placeholder with photo when ready -->
+			<div class="photo-placeholder" aria-label="Photo coming soon"></div>
+			<div class="bio">
+				<p class="role">Founder</p>
+				<p>
+					Nick has spent his career at the intersection of technology, organizations, and the people
+					they serve. Before founding People/Purpose/Product, he spent years at Kromatic working with
+					more than 30 organizations — including Siemens, Unilever, General Mills, the US Government,
+					and United Way — teaching innovation tools and helping teams build new capabilities.
+				</p>
+				<p>
+					His background is in product management, entrepreneurship, and organizational change.
+					He started in San Francisco's tech ecosystem as a founder, then spent years helping
+					enterprise and mission-driven organizations understand what it means to build products
+					that actually serve people.
+				</p>
+				<p>
+					Now he's focused on a narrow question: what happens when mission-driven organizations
+					get access to the same tools enterprises have — and use them without losing what makes
+					them different?
+				</p>
+			</div>
+		</div>
+	</section>
 
-	<p>
-		My faithful participation in this experiment continued through college, where I started to think more deeply about my values, my mission, and my purpose. I was motivated to better understand why people do the things they do and ended up studying comparitive religious studies. During that time, my relationship with the technology I loved so much became more complex. All of a sudden I started to feel moments of regret after the delight that software brought. I began to appreciate that there were often two sides to the products that I and the people around me used.
+	<section class="content-section">
+		<h2>Our collaborators</h2>
+		<!-- Spike: unnamed by design — employed elsewhere full-time -->
+		<p>
+			People/Purpose/Product works with a small group of experienced collaborators on a
+			project basis. Our team includes an AI engineer and product strategist with a background
+			in enterprise software and AI systems — bringing technical depth to the problems that
+			need it.
+		</p>
+		<p>
+			We keep the team small deliberately. Every person on a project is someone whose
+			judgment we trust.
+		</p>
+	</section>
 
-	<p>
-		After a brief stint working in the outdoor industry, I moved to San Francisco to start my journey in the tech and tech-adjacent industries, first as a founder of a mobile app startup, then as an innovation consultant teaching entrepreneurial tools, finally landing as a product manager helping teams build the right products, for the right people, in the right ways. Throughout this journey, the complexity of my relationships with software and digital products only increased as I got more and more familiar with what goes on under the hood. I saw cloud computing and social media lower the cost of creation and connection, enabling people to do extraordinary - and deplorable - things.
-	</p>
+	<section class="content-section">
+		<h2>How we work</h2>
+		<p>
+			The model comes from places like Pivotal Labs and 37signals: build with clients, not for
+			them. Every engagement is designed so that by the time it ends, your team understands what
+			was built and why — and can maintain and extend it without coming back to us.
+		</p>
+		<p>
+			We're not interested in dependency. We're interested in capability.
+		</p>
+	</section>
 
-	<p>
-		Nowadays, it's easier than ever to generate software, and I think it will only continue to get easier. AI has permanently changed the landscape of the software industry, and my hope is that it's for the better, but I'm not waiting around to see. I want to be a part of a world where people who lead with purpose and think deeply about what their communities need can build products that positively impact the world around them. If you want to follow along my work, come connect with me on <a href="https://www.linkedin.com/in/nicknorena/">LinkedIn</a>.
-</Layout>
+	<section class="content-section closing">
+		<a href="/work-with-us" class="cta-button">Work with us →</a>
+	</section>
+</MarketingLayout>
+
+<style>
+	.page-header {
+		padding: 3em 0 2.5em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3em;
+	}
+	.page-header h1 {
+		font-size: 3rem;
+		line-height: 1.1;
+	}
+
+	.content-section {
+		margin-bottom: 3em;
+		padding-bottom: 3em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		max-width: 720px;
+	}
+	.content-section h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.75em;
+	}
+	.closing {
+		border-bottom: none;
+	}
+
+	/* Team layout */
+	.person {
+		display: flex;
+		gap: 2em;
+		align-items: flex-start;
+	}
+	.photo-placeholder {
+		width: 160px;
+		height: 160px;
+		min-width: 160px;
+		background: rgb(var(--gray-light));
+		border-radius: 8px;
+	}
+	.bio .role {
+		font-weight: 700;
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.75em;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: var(--accent);
+		color: white;
+		padding: 0.75em 1.5em;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 1rem;
+		transition: background 0.2s ease;
+	}
+	.cta-button:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+
+	@media (max-width: 720px) {
+		.page-header h1 {
+			font-size: 2.25rem;
+		}
+		.person {
+			flex-direction: column;
+			gap: 1.5em;
+		}
+		.photo-placeholder {
+			width: 120px;
+			height: 120px;
+			min-width: 120px;
+		}
+	}
+</style>

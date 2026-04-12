@@ -1,61 +1,236 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getCollection } from 'astro:content';
+import FormattedDate from '../components/FormattedDate.astro';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+const recentPosts = (await getCollection('blog'))
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+	.slice(0, 3);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>Hello, Reader!</h1>
-			<p>
-			    Welcome to <b>People/Purpose/Product</b>, a blog about building products that actually serve people.
-			</p>
-			<p>
-                <b>Here's the opportunity:</b> we're entering a world where anyone can build digital products. And whether you're deep in the tech world looking to build differently, or you're just beginning and want to avoid repeating broken patterns, emerging tools give you a chance to avoid repeating the same extractive patterns we see all over the software industry.
-			</p>
-			<p>
-				<b>This blog is a translation layer.</b> I'm here to share what's working and what's not when it comes to building for impact, and to bridge the humanities and technology. If you can imagine a product that genuinely serves people, you're getting closer to being able to build it, and I want that to be a good thing.
-			</p>
+<MarketingLayout
+	title="People/Purpose/Product"
+	description="We help mission-driven organizations build digital products — and emerge more capable for having built them."
+>
+	<!-- Hero -->
+	<section class="hero">
+		<h1>AI for impact,<br />not extraction.</h1>
+		<p class="tagline">
+			We help mission-driven organizations build digital products — and emerge more capable for having built them.
+		</p>
+		<a href="/work-with-us" class="cta-button">Start a conversation →</a>
+	</section>
 
-		</main>
-		<Footer />
-	</body>
-</html>
+	<!-- Audience -->
+	<section class="section">
+		<h2>Who this is for</h2>
+		<p>
+			You're a funded executive director, nonprofit program manager, government agency leader,
+			or foundation program officer. You have a real problem and the budget to solve it.
+			You want AI as leverage — not a replacement for the people and judgment that make your
+			organization work.
+		</p>
+		<p>
+			If you've been burned by vendors who built something and left, or consultants who
+			delivered a deck and disappeared, this is a different kind of engagement.
+		</p>
+	</section>
 
+	<!-- Services -->
+	<section class="section">
+		<h2>What we do</h2>
+		<p>
+			We design and build digital products with mission-driven organizations — and we teach
+			you to use AI throughout the process. Not as a shortcut. As a capability your team
+			keeps after we're gone.
+		</p>
+		<p>
+			Every engagement ends with your team more capable than when it started. That's the point.
+		</p>
+		<a href="/ai" class="text-link">How we think about AI →</a>
+	</section>
 
-			<!-- <p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p> -->
+	<!-- Social Proof -->
+	<section class="section">
+		<h2>Organizations we've worked with</h2>
+		<p class="proof-context">
+			Before People/Purpose/Product, our founder spent years helping organizations like these
+			use innovation tools and build new capabilities.
+		</p>
+		<ul class="client-list">
+			<!-- TODO: replace text entries with logo once approved per client -->
+			<li>Siemens</li>
+			<li>Unilever</li>
+			<li>General Mills</li>
+			<li>Walmart Labs</li>
+			<li>US Government</li>
+			<li>United Way</li>
+			<li>ChildFund International</li>
+			<li>Asian Development Bank</li>
+			<li>Cancer Research UK</li>
+			<li>Davidson College</li>
+			<li>European School of Management and Technology</li>
+			<li>Nordic Innovation House</li>
+		</ul>
+		<p class="proof-footnote">And 20+ other organizations across corporate, nonprofit, government, and international development.</p>
+	</section>
+
+	<!-- Blog Preview -->
+	<section class="section">
+		<h2>From the blog</h2>
+		<ul class="post-list">
+			{recentPosts.map((post) => (
+				<li>
+					<a href={`/blog/${post.id}/`}>
+						<span class="post-title">{post.data.title}</span>
+						<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
+					</a>
+				</li>
+			))}
+		</ul>
+		<a href="/blog" class="text-link">Read all posts →</a>
+	</section>
+
+	<!-- Footer CTA -->
+	<section class="section closing-cta">
+		<p>Ready to talk about what you're building?</p>
+		<a href="/work-with-us" class="cta-button">Work with us →</a>
+	</section>
+</MarketingLayout>
+
+<style>
+	/* Hero */
+	.hero {
+		padding: 4em 0 3em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3em;
+	}
+	.hero h1 {
+		font-size: 3.5rem;
+		line-height: 1.1;
+		margin-bottom: 0.5em;
+	}
+	.tagline {
+		font-size: 1.2rem;
+		color: rgb(var(--gray-dark));
+		max-width: 600px;
+		margin-bottom: 1.5em;
+	}
+
+	/* CTA button */
+	.cta-button {
+		display: inline-block;
+		background: var(--accent);
+		color: white;
+		padding: 0.75em 1.5em;
+		border-radius: 4px;
+		text-decoration: none;
+		font-weight: 700;
+		font-size: 1rem;
+		transition: background 0.2s ease;
+	}
+	.cta-button:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+
+	/* Sections */
+	.section {
+		margin-bottom: 3.5em;
+		padding-bottom: 3.5em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.section:last-child {
+		border-bottom: none;
+	}
+	.section h2 {
+		font-size: 1.75rem;
+		margin-bottom: 0.75em;
+	}
+
+	/* Text link */
+	.text-link {
+		font-weight: 700;
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.text-link:hover {
+		text-decoration: underline;
+	}
+
+	/* Client list */
+	.proof-context {
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+		margin-bottom: 1.25em;
+	}
+	.client-list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 0.75em 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.5em 1.5em;
+	}
+	.client-list li {
+		font-size: 1rem;
+		color: rgb(var(--gray-dark));
+	}
+	.proof-footnote {
+		font-size: 0.9rem;
+		color: rgb(var(--gray));
+		margin-top: 0.5em;
+	}
+
+	/* Blog post list */
+	.post-list {
+		list-style: none;
+		padding: 0;
+		margin: 0 0 1em 0;
+	}
+	.post-list li {
+		margin-bottom: 0.75em;
+	}
+	.post-list a {
+		display: flex;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 1em;
+		text-decoration: none;
+		color: rgb(var(--black));
+		padding: 0.5em 0;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.post-list a:hover .post-title {
+		color: var(--accent);
+	}
+	.post-title {
+		font-weight: 700;
+	}
+	.post-date {
+		font-size: 0.85rem;
+		color: rgb(var(--gray));
+		white-space: nowrap;
+	}
+
+	/* Closing CTA */
+	.closing-cta {
+		text-align: center;
+		padding: 3em 0;
+	}
+	.closing-cta p {
+		font-size: 1.3rem;
+		margin-bottom: 1em;
+		color: rgb(var(--gray-dark));
+	}
+
+	@media (max-width: 720px) {
+		.hero h1 {
+			font-size: 2.5rem;
+		}
+		.post-list a {
+			flex-direction: column;
+			gap: 0.25em;
+		}
+	}
+</style>

@@ -1,9 +1,11 @@
 ---
+import { Image } from 'astro:assets';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
+import nickPhoto from '../assets/nick-noreña.jpeg';
 ---
 
 <MarketingLayout
-	title="About — People/Purpose/Product"
+	title="About | People/Purpose/Product"
 	description="People/Purpose/Product is a product studio working with mission-driven organizations to build software that creates real impact."
 >
 	<section class="page-header">
@@ -13,15 +15,14 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 	<section class="content-section team-section">
 		<h2>Nick Noreña</h2>
 		<div class="person">
-			<!-- TODO: replace placeholder with photo when ready -->
-			<div class="photo-placeholder" aria-label="Photo coming soon"></div>
+			<Image src={nickPhoto} alt="Nick Noreña" width={320} height={320} class="photo" />
 			<div class="bio">
 				<p class="role">Founder</p>
 				<p>
 					Nick has spent his career at the intersection of technology, organizations, and the people
 					they serve. Before founding People/Purpose/Product, he spent years at Kromatic working with
-					more than 30 organizations — including Siemens, Unilever, General Mills, the US Government,
-					and United Way — teaching innovation tools and helping teams build new capabilities.
+					more than 30 organizations including Siemens, Unilever, General Mills, the US Government,
+					and United Way, teaching innovation tools and helping teams build new capabilities.
 				</p>
 				<p>
 					His background is in product management, entrepreneurship, and organizational change.
@@ -31,7 +32,7 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 				</p>
 				<p>
 					Now he's focused on a narrow question: what happens when mission-driven organizations
-					get access to the same tools enterprises have — and use them without losing what makes
+					get access to the same tools enterprises have, and use them without losing what makes
 					them different?
 				</p>
 			</div>
@@ -40,11 +41,11 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 
 	<section class="content-section">
 		<h2>Our collaborators</h2>
-		<!-- Spike: unnamed by design — employed elsewhere full-time -->
+		<!-- Spike: unnamed by design, employed elsewhere full-time -->
 		<p>
 			People/Purpose/Product works with a small group of experienced collaborators on a
 			project basis. Our team includes an AI engineer and product strategist with a background
-			in enterprise software and AI systems — bringing technical depth to the problems that
+			in enterprise software and AI systems, bringing technical depth to the problems that
 			need it.
 		</p>
 		<p>
@@ -58,7 +59,7 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 		<p>
 			The model comes from places like Pivotal Labs and 37signals: build with clients, not for
 			them. Every engagement is designed so that by the time it ends, your team understands what
-			was built and why — and can maintain and extend it without coming back to us.
+			was built and why, and can maintain and extend it without coming back to us.
 		</p>
 		<p>
 			We're not interested in dependency. We're interested in capability.
@@ -101,12 +102,12 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 		gap: 2em;
 		align-items: flex-start;
 	}
-	.photo-placeholder {
+	.photo {
 		width: 160px;
 		height: 160px;
 		min-width: 160px;
-		background: rgb(var(--gray-light));
 		border-radius: 8px;
+		object-fit: cover;
 	}
 	.bio .role {
 		font-weight: 700;
@@ -141,7 +142,7 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 			flex-direction: column;
 			gap: 1.5em;
 		}
-		.photo-placeholder {
+		.photo {
 			width: 120px;
 			height: 120px;
 			min-width: 120px;

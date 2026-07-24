@@ -1,28 +1,32 @@
 ---
 title: "Things Get Easier"
 description: "We welcomed our son Noah, and to my surprise, clarity of purpose has made a lot of life easier."
-pubDate: "Jul 8 2026"
-heroImage: "../../assets/blog-placeholder-1.jpg"
+pubDate: "Jul 27 2026"
+heroImage: "../../assets/valencia-peak-2.jpg"
 ---
 
-It's been a while since I published a new post, and that's because my wife Sophie and I welcomed our son, Noah, into the world.
+It's been a while since I sat down to write, and that's because my wife and I recently welcomed our son Noah into the world :)
 
-Everyone warns you about the parts that get harder. The lost sleep, the diapers, the spit-up, the way your calendar quietly stops belonging to you. All of it is true. But nobody really prepared me for the other side, the part I keep turning over in my head lately: how much has actually gotten easier.
+Sharing my new daily rhythms (or lack thereof) with people, I noticed something right away. They would always offer: "Things get easier." And to that I would say “Thank goodness!” The diapers, the spit-up, the sporadic sleep…I’m certainly glad all of that eventually cools off (well, maybe not the sporadic sleep).
 
-I named my work People Purpose Product for a reason. Early in my career, someone taught me that the biggest risk any product faces isn't that it's built badly. It's that it was built to solve the wrong thing for the wrong person. Products fail for all kinds of technical reasons, sure, but the goal that always stuck with me was quieter than any of them: build the right thing, for the right person, with purpose sitting at the center of the work. That idea shaped where I wanted to spend my time as a product strategist and coach.
+But what never seemed to come up were the many things that instantly got easier upon Noah’s arrival. Now, if I could impress upon him that crying is not the only way to get what you want in the middle of the night, I would. But while we weather this phase, I notice that everything I do is buoyed by a profound sense of purpose, and a clarity I have never felt. While these don't quite give me more hours of sleep, **so much is easier now than it has ever been.**
 
-Then Noah arrived, and the question I'd spent years helping teams ask about their products got answered for me about my own life. It's a cliche, and there's a reason cliches are true. I no longer question why I'm doing what I'm doing. The world quietly stopped being mine and became his. Everything I do now, I do for him.
+I often look to comedians to explain the world around me, and [this wonderful clip](https://www.youtube.com/shorts/MNhpnEczGQA) of Bob Odenkirk and Mike Birbiglia does a great job of putting that purpose and clarity into words. In it, Mike asks Bob "Who are you jealous of?", to which Bob replies "Anybody who's still got little kids at home growing up. There's no question I knew what I was doing when I had kids growing up. I was being a dad." Bob captures the confidence and comfort that comes with knowing yourself and what you stand for, and wasting little time on things that don't matter.
 
-**When your purpose is that clear, a surprising amount gets easier.**
+### Products as Vehicles for Purpose
 
-I don't want to flatten real hardship here. Difficulty is relative, and I'll always believe that. In a former life I trained as an EMT, and something my instructor told us has never left me. No matter who you're treating, if an ambulance had to show up, it's probably the worst day of that person's life. Could be a five-year-old who sprained an ankle playing soccer. Could be a professional skydiver who broke both femurs on landing. Same ambulance. Worst day of their life, either way.
+I can’t help but reflect on the work I do helping teams build products that bring their purpose to the world, and how the same first principles hold true. A product is a vehicle. It carries a purpose farther than any one person could, putting a team’s beliefs in front of many people they would never otherwise reach. When this is done well, it scales a mission’s reach and impact beyond what anyone thought possible when they started.
 
-I hold onto that lens. It keeps me honest about what "hard" actually means. And through it, I can say plainly: the things I do to take care of myself, so that I can take care of Noah, have gotten easier. The effort is the same. What's gone is the wondering whether it's worth it.
+And the same purpose a product carries outward is what steers it. When an organization has their purpose clearly articulated, and the discipline to ensure everything they do is in service to that purpose, the resulting clarity is beautiful. Decisions about how to measure outcomes and impact get easier. Value proposition framing gets clearer. And most importantly, how we prioritize our time spent building becomes more obvious.
 
-Here's where it shows up most for me. I've always thought of prioritization as an exercise in saying no, not saying yes, and that framing has served me well for years. But figuring out what to say no to is so much harder than figuring out what to say yes to. Saying yes is easy; the world is full of good things to say yes to. Saying no is where the real work lives.
+The biggest risk any product faces isn’t that it’s built poorly. It’s that it’s built to solve the wrong thing for the wrong person. That’s why I've always thought of prioritization as an exercise in saying no, not saying yes, and that framing has served me well for years. But figuring out what to say no to is far harder than figuring out what to say yes to. Saying yes is easy; the world is full of good things to say yes to. Saying no is where the real work lives. Fighting against our own biases to build a solution that is truly in service to its users requires a great deal of clarity, and the restraint to say no to the distractions that pull a roadmap in six different directions.
 
-That has gotten easier too since I met the little guy. I know where my time and energy belong now, with a clarity I didn't have just a few months ago. The nos come faster because the yes underneath them, him, is never in question.
+As a new parent, it’s easier to know where my time and energy belong now, with a clarity I didn't have just a few months ago. The nos come faster because the yes underneath them is never in question, and I now have a new ideal that colors how I help teams make better product decisions, faster.
 
-So yes, things got harder. The sleep is real. But I keep circling back to the strange, steadying truth that a clear enough purpose makes so much of the hard stuff lighter. Maybe that's the whole thing. Find the why you'd never question, and a lot of the other choices start making themselves.
+### The “Why” You’d Never Question
 
-I'm still working out what that means for my work, my days, and the years ahead. For now, I just wanted to introduce you to Noah, and to tell you that, against everything I was warned about, things got easier.
+With Noah's arrival, the world quietly stopped being mine and became his. And with that shift, the things I do so that I can take care of Noah have gotten easier. The effort is the same. What's gone is the wondering whether it's worth it.
+
+So yes, things got harder (the lack of sleep is real). But I keep circling back to this paradoxical yet steadying truth: when you do the hard work of finding the “why” you'd never question, a lot of the other choices start making themselves.
+
+That’s what’s going on in my world. And before I put down the pen and head back to the land of diapers, bottles, and laundry, I’d like to tell you firsthand as a new parent that things do get easier.

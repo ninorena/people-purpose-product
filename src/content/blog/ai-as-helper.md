@@ -1,6 +1,7 @@
 ---
 title: 'AI as Helper: What jobs are you hiring AI to do?'
-description: 'Lorem ipsum dolor sit amet'
+# TODO(nick): draft-grade description — edit to taste
+description: 'Every productivity tool has promised to save us time. Retaining agency with AI starts with the job you hire it to do.'
 pubDate: 'Feb 12 2026'
 heroImage: '../../assets/los-osos-beach.jpg'
 ---

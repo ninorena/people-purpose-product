@@ -29,9 +29,9 @@ const recentPosts = (await getCollection('blog'))
 				</p>
 				<p>
 					<b>This blog is a translation layer.</b> I'm here to share what's working and
-					what's not when it comes to building for impact, and to bridge the humanities
+					what's not when it comes to building software for impact, and to bridge the humanities
 					and technology. If you can imagine a product that genuinely serves people,
-					you're getting closer to being able to build it, and I want that to be a good
+					you have more tools than ever to actually build it, and I want that to be a good
 					thing.
 				</p>
 			</section>
@@ -43,12 +43,14 @@ const recentPosts = (await getCollection('blog'))
 						<li>
 							<a href={`/blog/${post.id}/`}>
 								{post.data.heroImage && (
-									<Image width={720} height={360} src={post.data.heroImage} alt="" />
+									<Image width={360} height={240} src={post.data.heroImage} alt="" class="thumb" />
 								)}
-								<h3 class="title">{post.data.title}</h3>
-								<p class="date">
-									<FormattedDate date={post.data.pubDate} />
-								</p>
+								<div class="post-text">
+									<h3 class="title">{post.data.title}</h3>
+									<p class="date">
+										<FormattedDate date={post.data.pubDate} />
+									</p>
+								</div>
 							</a>
 						</li>
 					))}
@@ -83,26 +85,29 @@ const recentPosts = (await getCollection('blog'))
 		margin: 0;
 	}
 	.recent-posts li {
-		margin-bottom: 2.5em;
+		margin-bottom: 1.5em;
 	}
 	.recent-posts a {
-		display: block;
+		display: flex;
+		align-items: center;
+		gap: 1.25em;
 		text-decoration: none;
 	}
-	.recent-posts img {
-		width: 100%;
-		height: auto;
-		border-radius: 12px;
-		margin-bottom: 0.5em;
+	.recent-posts .thumb {
+		width: 180px;
+		height: 120px;
+		min-width: 180px;
+		object-fit: cover;
+		border-radius: 8px;
 	}
-	.recent-posts a:hover img {
+	.recent-posts a:hover .thumb {
 		box-shadow: var(--box-shadow);
 	}
 	.recent-posts .title {
 		margin: 0;
 		color: rgb(var(--black));
-		font-size: 1.563em;
-		line-height: 1.2;
+		font-size: 1.25em;
+		line-height: 1.3;
 	}
 	.recent-posts a:hover .title,
 	.recent-posts a:hover .date {
@@ -132,5 +137,12 @@ const recentPosts = (await getCollection('blog'))
 	}
 	.work-note a {
 		color: var(--accent);
+	}
+	@media (max-width: 720px) {
+		.recent-posts .thumb {
+			width: 120px;
+			height: 80px;
+			min-width: 120px;
+		}
 	}
 </style>

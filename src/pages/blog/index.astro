@@ -17,74 +17,64 @@ const posts = (await getCollection('blog')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			main {
-				width: 960px;
+			.page-title {
+				font-size: 1.5rem;
+				margin-bottom: 1em;
 			}
 			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
 				list-style-type: none;
 				margin: 0;
 				padding: 0;
 			}
 			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-				max-width: 480px;
-				width: 100%;
-				height: auto;
+				margin-bottom: 1.75em;
 			}
 			ul li a {
-				display: block;
+				display: flex;
+				align-items: flex-start;
+				gap: 1.25em;
+				text-decoration: none;
+			}
+			.thumb {
+				width: 180px;
+				height: 120px;
+				min-width: 180px;
+				object-fit: cover;
+				border-radius: 8px;
+				transition: 0.2s ease;
+			}
+			a:hover .thumb {
+				box-shadow: var(--box-shadow);
 			}
 			.title {
 				margin: 0;
 				color: rgb(var(--black));
-				line-height: 1;
+				font-size: 1.25em;
+				line-height: 1.3;
 			}
 			.date {
-				margin: 0;
+				margin: 0.25em 0 0;
 				color: rgb(var(--gray));
+				font-size: 0.95rem;
 			}
-			ul li a:hover h4,
-			ul li a:hover .date {
+			.description {
+				margin: 0.5em 0 0;
+				color: rgb(var(--gray-dark));
+				font-size: 0.95rem;
+				line-height: 1.5;
+			}
+			a:hover .title,
+			a:hover .date {
 				color: rgb(var(--accent));
 			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
 			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
+				.thumb {
+					width: 120px;
+					height: 80px;
+					min-width: 120px;
 				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
+				.description {
+					display: none;
 				}
 			}
 		</style>
@@ -92,6 +82,7 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
+			<h1 class="page-title">Blog</h1>
 			<section>
 				<ul>
 					{
@@ -99,12 +90,15 @@ const posts = (await getCollection('blog')).sort(
 							<li>
 								<a href={`/blog/${post.id}/`}>
 									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" loading="eager"/>
+										<Image width={360} height={240} src={post.data.heroImage} alt="" class="thumb" />
 									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
+									<div>
+										<h2 class="title">{post.data.title}</h2>
+										<p class="date">
+											<FormattedDate date={post.data.pubDate} />
+										</p>
+										<p class="description">{post.data.description}</p>
+									</div>
 								</a>
 							</li>
 						))

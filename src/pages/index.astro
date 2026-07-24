@@ -1,236 +1,136 @@
 ---
 import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
 import FormattedDate from '../components/FormattedDate.astro';
-import MarketingLayout from '../layouts/MarketingLayout.astro';
+import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const recentPosts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
 ---
 
-<MarketingLayout
-	title="People/Purpose/Product"
-	description="We help you build products people actually use, and figure out where AI fits in your work."
->
-	<!-- Hero -->
-	<section class="hero">
-		<h1>An experimentation practice<br />for mission-driven teams.</h1>
-		<p class="tagline">
-			We help you build products people actually use, and figure out where AI fits in your work.
-		</p>
-		<a href="/work-with-us" class="cta-button">Start a conversation →</a>
-	</section>
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<Header />
+		<main>
+			<!-- TODO(nick): intro seeded from the pre-rebuild homepage — tune to taste -->
+			<section class="intro">
+				<h1>Hello, Reader!</h1>
+				<p>
+					Welcome to <b>People Purpose Product</b>, a blog about building products that
+					actually serve people.
+				</p>
+				<p>
+					<b>This blog is a translation layer.</b> I'm here to share what's working and
+					what's not when it comes to building for impact, and to bridge the humanities
+					and technology. If you can imagine a product that genuinely serves people,
+					you're getting closer to being able to build it, and I want that to be a good
+					thing.
+				</p>
+			</section>
 
-	<!-- Audience -->
-	<section class="section">
-		<h2>Who this is for</h2>
-		<p>
-			You're a funded executive director, nonprofit program manager, government agency leader,
-			or foundation program officer. You have a real problem and the budget to solve it.
-			You want AI as leverage, not a replacement for the people and judgment that make your
-			organization work.
-		</p>
-		<p>
-			If you've been burned by vendors who built something and left, or consultants who
-			delivered a deck and disappeared, this is a different kind of engagement.
-		</p>
-	</section>
+			<section class="recent-posts">
+				<h2>Recent posts</h2>
+				<ul>
+					{recentPosts.map((post) => (
+						<li>
+							<a href={`/blog/${post.id}/`}>
+								{post.data.heroImage && (
+									<Image width={720} height={360} src={post.data.heroImage} alt="" />
+								)}
+								<h3 class="title">{post.data.title}</h3>
+								<p class="date">
+									<FormattedDate date={post.data.pubDate} />
+								</p>
+							</a>
+						</li>
+					))}
+				</ul>
+				<p class="all-posts"><a href="/blog">All posts →</a></p>
+			</section>
 
-	<!-- Services -->
-	<section class="section">
-		<h2>What we do</h2>
-		<p>
-			We design and build digital products with mission-driven organizations, and we teach
-			you to use AI throughout the process. Not as a shortcut. As a capability your team
-			keeps after we're gone.
-		</p>
-		<p>
-			Every engagement ends with your team more capable than when it started. That's the point.
-		</p>
-		<a href="/ai" class="text-link">How we think about AI →</a>
-	</section>
-
-	<!-- Social Proof -->
-	<section class="section">
-		<h2>Organizations we've worked with</h2>
-		<p class="proof-context">
-			Before People/Purpose/Product, Nick spent years helping organizations like these
-			use innovation tools and build new capabilities.
-		</p>
-		<ul class="client-list">
-			<!-- TODO: replace text entries with logo once approved per client -->
-			<li>Siemens</li>
-			<li>Unilever</li>
-			<li>General Mills</li>
-			<li>Walmart Labs</li>
-			<li>US Government</li>
-			<li>United Way</li>
-			<li>ChildFund International</li>
-			<li>Asian Development Bank</li>
-			<li>Cancer Research UK</li>
-			<li>Davidson College</li>
-			<li>European School of Management and Technology</li>
-			<li>Nordic Innovation House</li>
-		</ul>
-		<p class="proof-footnote">And 20+ other organizations across corporate, nonprofit, government, and international development.</p>
-	</section>
-
-	<!-- Blog Preview -->
-	<section class="section">
-		<h2>From the blog</h2>
-		<ul class="post-list">
-			{recentPosts.map((post) => (
-				<li>
-					<a href={`/blog/${post.id}/`}>
-						<span class="post-title">{post.data.title}</span>
-						<span class="post-date"><FormattedDate date={post.data.pubDate} /></span>
-					</a>
-				</li>
-			))}
-		</ul>
-		<a href="/blog" class="text-link">Read all posts →</a>
-	</section>
-
-	<!-- Footer CTA -->
-	<section class="section closing-cta">
-		<p>Ready to talk about what you're building?</p>
-		<a href="/work-with-us" class="cta-button">Work with us →</a>
-	</section>
-</MarketingLayout>
+			<section class="work-note">
+				<p>
+					I also work with mission-driven teams on their products —
+					<a href="/about#work-with-me">more here</a>.
+				</p>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>
 
 <style>
-	/* Hero */
-	.hero {
-		padding: 4em 0 3em;
+	.intro {
+		padding-bottom: 2em;
+		margin-bottom: 2em;
 		border-bottom: 1px solid rgb(var(--gray-light));
-		margin-bottom: 3em;
 	}
-	.hero h1 {
-		font-size: 3.5rem;
-		line-height: 1.1;
+	.recent-posts h2 {
+		font-size: 1.5rem;
+		margin-bottom: 1em;
+	}
+	.recent-posts ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+	.recent-posts li {
+		margin-bottom: 2.5em;
+	}
+	.recent-posts a {
+		display: block;
+		text-decoration: none;
+	}
+	.recent-posts img {
+		width: 100%;
+		height: auto;
+		border-radius: 12px;
 		margin-bottom: 0.5em;
 	}
-	.tagline {
-		font-size: 1.2rem;
-		color: rgb(var(--gray-dark));
-		max-width: 600px;
-		margin-bottom: 1.5em;
+	.recent-posts a:hover img {
+		box-shadow: var(--box-shadow);
 	}
-
-	/* CTA button */
-	.cta-button {
-		display: inline-block;
-		background: var(--accent);
-		color: white;
-		padding: 0.75em 1.5em;
-		border-radius: 4px;
-		text-decoration: none;
-		font-weight: 700;
-		font-size: 1rem;
-		transition: background 0.2s ease;
+	.recent-posts .title {
+		margin: 0;
+		color: rgb(var(--black));
+		font-size: 1.563em;
+		line-height: 1.2;
 	}
-	.cta-button:hover {
-		background: var(--accent-dark);
-		color: white;
-	}
-
-	/* Sections */
-	.section {
-		margin-bottom: 3.5em;
-		padding-bottom: 3.5em;
-		border-bottom: 1px solid rgb(var(--gray-light));
-	}
-	.section:last-child {
-		border-bottom: none;
-	}
-	.section h2 {
-		font-size: 1.75rem;
-		margin-bottom: 0.75em;
-	}
-
-	/* Text link */
-	.text-link {
-		font-weight: 700;
+	.recent-posts a:hover .title,
+	.recent-posts a:hover .date {
 		color: var(--accent);
-		text-decoration: none;
 	}
-	.text-link:hover {
-		text-decoration: underline;
-	}
-
-	/* Client list */
-	.proof-context {
+	.recent-posts .date {
+		margin: 0.25em 0 0;
 		color: rgb(var(--gray));
 		font-size: 0.95rem;
-		margin-bottom: 1.25em;
 	}
-	.client-list {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 0.75em 0;
-		display: flex;
-		flex-wrap: wrap;
-		gap: 0.5em 1.5em;
-	}
-	.client-list li {
-		font-size: 1rem;
-		color: rgb(var(--gray-dark));
-	}
-	.proof-footnote {
-		font-size: 0.9rem;
-		color: rgb(var(--gray));
-		margin-top: 0.5em;
-	}
-
-	/* Blog post list */
-	.post-list {
-		list-style: none;
-		padding: 0;
-		margin: 0 0 1em 0;
-	}
-	.post-list li {
-		margin-bottom: 0.75em;
-	}
-	.post-list a {
-		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
-		gap: 1em;
-		text-decoration: none;
-		color: rgb(var(--black));
-		padding: 0.5em 0;
-		border-bottom: 1px solid rgb(var(--gray-light));
-	}
-	.post-list a:hover .post-title {
-		color: var(--accent);
-	}
-	.post-title {
+	.all-posts a {
 		font-weight: 700;
+		color: var(--accent);
+		text-decoration: none;
 	}
-	.post-date {
-		font-size: 0.85rem;
+	.all-posts a:hover {
+		text-decoration: underline;
+	}
+	.work-note {
+		margin-top: 3em;
+		padding-top: 2em;
+		border-top: 1px solid rgb(var(--gray-light));
+	}
+	.work-note p {
 		color: rgb(var(--gray));
-		white-space: nowrap;
+		font-size: 0.95rem;
 	}
-
-	/* Closing CTA */
-	.closing-cta {
-		text-align: center;
-		padding: 3em 0;
-	}
-	.closing-cta p {
-		font-size: 1.3rem;
-		margin-bottom: 1em;
-		color: rgb(var(--gray-dark));
-	}
-
-	@media (max-width: 720px) {
-		.hero h1 {
-			font-size: 2.5rem;
-		}
-		.post-list a {
-			flex-direction: column;
-			gap: 0.25em;
-		}
+	.work-note a {
+		color: var(--accent);
 	}
 </style>

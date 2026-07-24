@@ -2,11 +2,13 @@
 import { Image } from 'astro:assets';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import nickPhoto from '../assets/nick-noreña.jpeg';
+
+const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 ---
 
 <MarketingLayout
-	title="About | People/Purpose/Product"
-	description="People/Purpose/Product is an experimentation practice working with mission-driven teams to build products people actually use and figure out where AI fits in their work."
+	title="About | People Purpose Product"
+	description="People Purpose Product is an experimentation practice working with mission-driven teams to build products people actually use and figure out where AI fits in their work."
 >
 	<section class="page-header">
 		<h1>About</h1>
@@ -20,7 +22,7 @@ import nickPhoto from '../assets/nick-noreña.jpeg';
 				<p class="role">Founder</p>
 				<p>
 					Nick has spent his career at the intersection of technology, organizations, and the people
-					they serve. Before founding People/Purpose/Product, he spent years at Kromatic working with
+					they serve. Before founding People Purpose Product, he spent years at Kromatic working with
 					more than 30 organizations including Siemens, Unilever, General Mills, the US Government,
 					and United Way, teaching innovation tools and helping teams build new capabilities.
 				</p>
@@ -43,7 +45,7 @@ import nickPhoto from '../assets/nick-noreña.jpeg';
 		<h2>Our collaborators</h2>
 		<!-- Spike: unnamed by design, employed elsewhere full-time -->
 		<p>
-			People/Purpose/Product works with a small group of experienced collaborators on a
+			People Purpose Product works with a small group of experienced collaborators on a
 			project basis. Our team includes an AI engineer and product strategist with a background
 			in enterprise software and AI systems, bringing technical depth to the problems that
 			need it.
@@ -66,8 +68,20 @@ import nickPhoto from '../assets/nick-noreña.jpeg';
 		</p>
 	</section>
 
-	<section class="content-section closing">
-		<a href="/work-with-us" class="cta-button">Work with us →</a>
+	<section class="content-section closing" id="work-with-me">
+		<h2>Work with me</h2>
+		<!-- TODO(nick): copy is draft-grade — edit to taste -->
+		<p>
+			The first conversation isn't a pitch. It's a diagnostic: 30 minutes, no prep required,
+			and you'll leave with clarity on whether this is worth pursuing, whether or not we
+			work together.
+		</p>
+		<a href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer" class="cta-button">
+			Find a time →
+		</a>
+		<p class="schedule-note">
+			Prefer email? Reach out on <a href="https://www.linkedin.com/in/nicknorena/" target="_blank" rel="noopener noreferrer">LinkedIn</a> and we'll find a time.
+		</p>
 	</section>
 </MarketingLayout>
 
@@ -132,6 +146,14 @@ import nickPhoto from '../assets/nick-noreña.jpeg';
 	.cta-button:hover {
 		background: var(--accent-dark);
 		color: white;
+	}
+	.schedule-note {
+		margin-top: 1em;
+		font-size: 0.95rem;
+		color: rgb(var(--gray));
+	}
+	.schedule-note a {
+		color: var(--accent);
 	}
 
 	@media (max-width: 720px) {

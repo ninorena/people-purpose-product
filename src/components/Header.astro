@@ -31,17 +31,39 @@ import HeaderLink from './HeaderLink.astro';
 	}
 	nav {
 		display: flex;
+		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
+		column-gap: 0.5em;
+	}
+	.internal-links {
+		display: flex;
 	}
 	nav a {
 		padding: 1em 0.5em;
 		color: var(--black);
 		border-bottom: 4px solid transparent;
 		text-decoration: none;
+		white-space: nowrap;
 	}
 	nav a.active {
 		text-decoration: none;
 		border-bottom-color: var(--accent);
+	}
+	/* Narrow screens: title centered on its own row, links row centered below */
+	@media (max-width: 540px) {
+		nav {
+			justify-content: center;
+		}
+		h2 {
+			width: 100%;
+			text-align: center;
+		}
+		h2 a {
+			padding: 0.75em 0.5em 0.25em;
+		}
+		.internal-links a {
+			padding: 0.25em 0.75em 0.75em;
+		}
 	}
 </style>

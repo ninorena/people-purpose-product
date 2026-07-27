@@ -1,5 +1,5 @@
 ---
-title: "What are you doing with your new magic wand?"
+title: "Your New Magic Wand"
 description: "Everyone has access to a new magic wand - AI tooling. It's what we do with it that matters."
 pubDate: "Mar 5 2026"
 heroImage: "../../assets/valencia-peak.jpg"

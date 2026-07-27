@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# personal working docs live in the private workspace, never in this public repo
+drafts/

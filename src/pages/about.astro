@@ -110,16 +110,18 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 		border-bottom: none;
 	}
 
-	/* Team layout */
-	.person {
-		display: flex;
-		gap: 2em;
-		align-items: flex-start;
+	/* Team layout: photo floats top-right, bio text starts at the left
+	   margin (matching the sections below) and wraps around it */
+	.person::after {
+		content: "";
+		display: block;
+		clear: both;
 	}
 	.photo {
+		float: right;
 		width: 160px;
 		height: 160px;
-		min-width: 160px;
+		margin: 0 0 1em 2em;
 		border-radius: 8px;
 		object-fit: cover;
 	}
@@ -160,14 +162,11 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 		.page-header h1 {
 			font-size: 2.25rem;
 		}
-		.person {
-			flex-direction: column;
-			gap: 1.5em;
-		}
 		.photo {
+			float: none;
 			width: 120px;
 			height: 120px;
-			min-width: 120px;
+			margin: 0 0 1.5em;
 		}
 	}
 </style>

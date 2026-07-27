@@ -1,6 +1,6 @@
 ---
 title: "Bounded Creativity"
-description: "The tech industry's AI conversation is shaped by its own incentive structures. The people with the deepest expertise — and the most leverage — are outside of it."
+description: "The tech industry is getting very good at knowing what AI can optimize, but it's far less equipped to know what it should actually be used for."
 pubDate: "Feb 23 2026"
 heroImage: "../../assets/castoro-cellars.jpg"
 ---

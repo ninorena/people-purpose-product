@@ -1,6 +1,6 @@
 ---
 title: "Your New Magic Wand"
-description: "Everyone has access to a new magic wand - AI tooling. It's what we do with it that matters."
+description: "Everyone got the same magic wand. The difference is the constraints that shape how you use it."
 pubDate: "Mar 5 2026"
 heroImage: "../../assets/valencia-peak.jpg"
 ---

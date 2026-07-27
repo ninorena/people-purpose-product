@@ -1,6 +1,6 @@
 ---
 title: "Things Get Easier"
-description: "We welcomed our son Noah, and to my surprise, clarity of purpose has made a lot of life easier."
+description: "Who knew caring for a newborn would make things easier? It turns out clarity of purpose is a powerful thing."
 pubDate: "Jul 27 2026"
 heroImage: "../../assets/valencia-peak-2.jpg"
 ---

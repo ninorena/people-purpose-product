@@ -1,6 +1,6 @@
 ---
 title: "Your New Magic Wand"
-description: "Everyone got the same magic wand. The difference is the constraints that shape how you use it."
+description: "AI put a magic wand in all of our hands. The interesting part is the constraints that shape how we use it."
 pubDate: "Mar 5 2026"
 heroImage: "../../assets/valencia-peak.jpg"
 ---

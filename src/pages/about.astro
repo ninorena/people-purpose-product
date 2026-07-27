@@ -8,10 +8,16 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 
 <MarketingLayout
 	title="About | People Purpose Product"
-	description="People Purpose Product is an experimentation practice working with mission-driven teams to build products people actually use and figure out where AI fits in their work."
+	description="A blog and a practice exploring people, purpose, and products, working alongside mission-driven teams to help the helpers of the world do more good work."
 >
 	<section class="page-header">
 		<h1>About</h1>
+		<p class="lede">
+			The questions explored in this blog come from real work. <b>People Purpose Product</b>
+			is also a practice where I coach and build alongside mission-driven teams.
+			We ship products that serve people, and the team's toolbox gets bigger while we
+			do it. The purpose is simple: help the helpers of the world have a bigger impact through software.
+		</p>
 	</section>
 
 	<section class="content-section team-section">
@@ -21,19 +27,22 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 			<div class="bio">
 				<p class="role">Founder</p>
 				<p>
-					Nick has spent his career at the intersection of technology, organizations, and the people
-					they serve. Before founding People Purpose Product, he spent years at Kromatic working with
-					more than 30 organizations including Siemens, Unilever, General Mills, the US Government,
-					and United Way, teaching innovation tools and helping teams build new capabilities.
+					I've spent my career moving between coaching and product management, always close to the people
+					a product serves. I was a founding team member and Head of Coaching at Kromatic, where
+					I worked with more than 30 organizations, including Siemens, Unilever, General Mills,
+					the US Government, and United Way, teaching innovation tools and coaching teams through
+					discovery and validation.
 				</p>
 				<p>
-					His background is in product management, entrepreneurship, and organizational change.
-					He started in San Francisco's tech ecosystem as a founder, then spent years helping
-					enterprise and mission-driven organizations understand what it means to build products
-					that actually serve people.
+					As a product manager, I've shipped products that serve people: affordable
+					housing platforms for the City of Detroit and the Bay Area, a resource directory
+					connecting San Francisco families to critical services, and a worker-owned platform
+					advancing economic justice for gig workers with Driver's Seat Cooperative. Most
+					recently, I've been leading product on AI tools that help parents navigate government
+					benefits programs.
 				</p>
 				<p>
-					Now he's focused on a narrow question: what happens when mission-driven organizations
+					Now I'm focused on a narrow question: what happens when mission-driven organizations
 					get access to the same tools enterprises have, and use them without losing what makes
 					them different?
 				</p>
@@ -41,49 +50,41 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 		</div>
 	</section>
 
-	<section class="content-section">
-		<h2>Our collaborators</h2>
-		<!-- Spike: unnamed by design, employed elsewhere full-time -->
-		<p>
-			People Purpose Product works with a small group of experienced collaborators on a
-			project basis. Our team includes an AI engineer and product strategist with a background
-			in enterprise software and AI systems, bringing technical depth to the problems that
-			need it.
-		</p>
-		<p>
-			We keep the team small deliberately. Every person on a project is someone whose
-			judgment we trust.
-		</p>
-	</section>
-
-	<section class="content-section">
-		<h2>How we work</h2>
-		<p>
-			The model comes from places like Pivotal Labs and 37signals: build with clients, not for
-			them. Every engagement is designed so that by the time it ends, your team understands what
-			was built and why, and can maintain and extend it without coming back to us.
-		</p>
-		<p>
-			We're not interested in dependency. We're interested in capability.
-		</p>
-	</section>
-
 	<section class="content-section closing" id="work-with-me">
-		<h2>Work with me</h2>
-		<!-- TODO(nick): copy is draft-grade — edit to taste -->
+		<h2>Working together</h2>
+		<!-- Collaborators stay unnamed by design (employed elsewhere full-time) -->
 		<p>
-			The first conversation isn't a pitch. It's a diagnostic: 30 minutes, no prep required,
-			and you'll leave with clarity on whether this is worth pursuing, whether or not we
-			work together.
+			I build <i>with</i> clients, working side by side to design experiments,
+			make product decisions, and ship together. By the time an engagement ends,
+			your team understands what was built and why, and can maintain and extend it without
+			coming back to me. When a project needs more hands, I bring in a small group of
+			experienced collaborators whose judgment I trust.
+		</p>
+		<p>
+			If any of this resonates, I'd love to talk. Book a 30 min consultation call to go over
+			what you are working on and how I can help.
 		</p>
 		<a href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer" class="cta-button">
 			Find a time →
 		</a>
 		<p class="schedule-note">
-			Prefer email? Reach out on <a href="https://www.linkedin.com/in/nicknorena/" target="_blank" rel="noopener noreferrer">LinkedIn</a> and we'll find a time.
+			Prefer email? Write me at <a class="email-link" href="https://www.linkedin.com/in/nicknorena/">hello at this domain</a>.
 		</p>
 	</section>
 </MarketingLayout>
+
+<script>
+	// Assemble the address in the browser so scrapers reading the raw HTML
+	// never see a complete email. The href above is a fallback (LinkedIn)
+	// for the rare no-JS visitor.
+	const user = 'hello';
+	const domain = 'peoplepurposeproduct.com';
+	const address = `${user}@${domain}`;
+	document.querySelectorAll('.email-link').forEach((el) => {
+		el.setAttribute('href', `mailto:${address}`);
+		el.textContent = address;
+	});
+</script>
 
 <style>
 	.page-header {
@@ -94,6 +95,12 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 	.page-header h1 {
 		font-size: 3rem;
 		line-height: 1.1;
+	}
+	.page-header .lede {
+		margin-top: 1em;
+		max-width: 720px;
+		font-size: 1.1rem;
+		line-height: 1.6;
 	}
 
 	.content-section {

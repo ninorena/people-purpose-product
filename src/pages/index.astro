@@ -21,16 +21,33 @@ const recentPosts = (await getCollection('blog'))
 		<Header />
 		<main>
 			<section class="intro">
-				<h1>Most funded mission-driven teams never had a product owner.</h1>
-				<p class="lede">
-					I work as theirs, and I leave the team able to do the job without me.
+				<h1>Everyone ends up a de facto product owner.</h1>
+				<p>
+					A client called me this spring about something I hadn't been hired for. He'd brought
+					me in to help build the thing. Now he wanted to know how to run a pilot, how to do
+					early sales, how to craft the narrative for a demo day in front of funders. That's
+					not how this started, I thought. But you're asking, so let's go.
 				</p>
 				<p>
-					The work is judgment, not delivery: what to build, in what order, and how we
-					know it worked. Engineering makes sure the thing is built right. I make sure
-					it is the right thing.
+					I keep landing in that spot, and it's always the same shape of organization. It
+					understands its impact space better than any consultant ever will. It has real
+					funding to build software. And nobody inside has "decide what we build" written
+					into their job, so the decision falls to whoever is closest to it that week.
+					Someone says they want a site that helps people do a thing, and off it goes. It
+					ships on time, exactly to spec, and then it doesn't do what anyone hoped, and
+					there's no good word for what went wrong.
 				</p>
-				<p class="intro-cta"><a href="/work">The three ways that works →</a></p>
+				<p>
+					I want to be in the room when that lands. It's the most useful moment in this
+					whole business, and most people go through it by themselves. Engineering makes
+					sure a thing gets built right. My job is making sure it's the right thing.
+				</p>
+				<p class="claim">
+					<b>Most funded mission-driven teams never had a product owner. I work as theirs,
+					and I leave the team able to do the job without me.</b> Where to invest. In what
+					order. How you'll know it worked.
+				</p>
+				<p class="intro-cta"><a href="/work">The three ways that works &rarr;</a></p>
 			</section>
 
 			<section class="recent-posts">
@@ -74,14 +91,11 @@ const recentPosts = (await getCollection('blog'))
 	.intro h1 {
 		font-size: 2.25rem;
 		line-height: 1.2;
-		margin: 0 0 0.5em;
-		max-width: 20ch;
+		margin: 0 0 0.75em;
+		max-width: 24ch;
 	}
-	.intro .lede {
-		font-size: 1.25rem;
-		line-height: 1.5;
-		margin: 0 0 1em;
-		max-width: 60ch;
+	.intro .claim {
+		margin-top: 1.5em;
 	}
 	.intro p {
 		max-width: 66ch;

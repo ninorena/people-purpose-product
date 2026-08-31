@@ -21,24 +21,26 @@ const recentPosts = (await getCollection('blog'))
 		<Header />
 		<main>
 			<section class="intro">
-				<h1>Welcome, Reader</h1>
-				<p>
-					<b>People Purpose Product</b> is a blog exploring the intersection of people, their purpose, and the products
-					they build and use.
+				<h1>Most funded mission-driven teams never had a product owner.</h1>
+				<p class="lede">
+					I work as theirs, and I leave the team able to do the job without me.
 				</p>
 				<p>
-					The tools to build software are catching up to the people who know what's worth building. 
-					Teachers, caseworkers, organizers, founders: people who have spent years close to real problems 
-					can now turn what they know into working products. I write about what that makes possible, 
-					and what it asks of us.
+					The work is judgment, not delivery: what to build, in what order, and how we
+					know it worked. Engineering makes sure the thing is built right. I make sure
+					it is the right thing.
 				</p>
-				<p>
-					Every post here starts with some version of the same question: <b>now that anyone can build, what should we?</b>
-				</p>
+				<p class="intro-cta"><a href="/work">The three ways that works →</a></p>
 			</section>
 
 			<section class="recent-posts">
-				<h2>Recent posts</h2>
+				<h2>Writing</h2>
+				<p class="writing-note">
+					The tools to build software are catching up to the people who know what's worth building.
+					Teachers, caseworkers, organizers, founders: people who have spent years close to real
+					problems can now turn what they know into working products. I write about what that
+					makes possible, and what it asks of us.
+				</p>
 				<ul>
 					{recentPosts.map((post) => (
 						<li>
@@ -58,13 +60,6 @@ const recentPosts = (await getCollection('blog'))
 				</ul>
 				<p class="all-posts"><a href="/blog">All posts →</a></p>
 			</section>
-
-			<section class="work-note">
-				<p>
-					I also work with mission-driven teams on their products —
-					<a href="/about#work-with-me">more here</a>.
-				</p>
-			</section>
 		</main>
 		<Footer />
 	</body>
@@ -76,9 +71,36 @@ const recentPosts = (await getCollection('blog'))
 		margin-bottom: 2em;
 		border-bottom: 1px solid rgb(var(--gray-light));
 	}
+	.intro h1 {
+		font-size: 2.25rem;
+		line-height: 1.2;
+		margin: 0 0 0.5em;
+		max-width: 20ch;
+	}
+	.intro .lede {
+		font-size: 1.25rem;
+		line-height: 1.5;
+		margin: 0 0 1em;
+		max-width: 60ch;
+	}
+	.intro p {
+		max-width: 66ch;
+	}
+	.intro-cta a {
+		font-weight: 700;
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.intro-cta a:hover {
+		text-decoration: underline;
+	}
 	.recent-posts h2 {
 		font-size: 1.5rem;
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
+	}
+	.writing-note {
+		max-width: 66ch;
+		margin: 0 0 1.75em;
 	}
 	.recent-posts ul {
 		list-style: none;
@@ -127,19 +149,10 @@ const recentPosts = (await getCollection('blog'))
 	.all-posts a:hover {
 		text-decoration: underline;
 	}
-	.work-note {
-		margin-top: 3em;
-		padding-top: 2em;
-		border-top: 1px solid rgb(var(--gray-light));
-	}
-	.work-note p {
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
-	}
-	.work-note a {
-		color: var(--accent);
-	}
 	@media (max-width: 720px) {
+		.intro h1 {
+			font-size: 1.75rem;
+		}
 		.recent-posts .thumb {
 			width: 120px;
 			height: 80px;

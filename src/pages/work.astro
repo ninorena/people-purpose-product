@@ -1,0 +1,177 @@
+---
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+
+const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
+---
+
+<MarketingLayout
+	title="Work | People Purpose Product"
+	description="Three ways I work as the product owner for funded mission-driven teams: a product studio, a fractional seat, and a coaching program."
+>
+	<section class="page-header">
+		<h1>Work</h1>
+		<p class="lede">
+			Most funded mission-driven teams never had a product owner. I work as theirs,
+			and I leave the team able to do the job without me. The work is judgment, not
+			delivery: what to build, in what order, and how we know it worked.
+		</p>
+	</section>
+
+	<section class="services">
+		<article class="service">
+			<h2>Product studio</h2>
+			<p class="what">
+				I own the roadmap and bring the engineers. You get a working product, and a
+				team that understands why it was built this way.
+			</p>
+			<p class="fit"><b>Fits when</b> you have funding and a real problem, and nobody inside to run the build.</p>
+		</article>
+
+		<article class="service">
+			<h2>Fractional product owner</h2>
+			<p class="what">
+				I take the product owner seat on your team. I draft the requirements, design
+				the experiments, read the data, and make the call, with your people in the room.
+			</p>
+			<p class="fit"><b>Fits when</b> you already have engineers, and nobody deciding what they build.</p>
+		</article>
+
+		<article class="service">
+			<h2>Product owner coaching</h2>
+			<p class="what">
+				A program that trains your people to do this job. We draft the roadmap together,
+				run the experiments together, and watch ideas flop together, until your team can
+				do it without me.
+			</p>
+			<p class="fit"><b>Fits when</b> someone on your team is already doing this job and never had anyone to learn it from.</p>
+		</article>
+	</section>
+
+	<section class="content-section">
+		<h2>The studio and the fractional seat look alike from the outside</h2>
+		<p>
+			The difference is who owns the roadmap. In the studio I own it. In the fractional
+			seat you own it, and I sit in it with you.
+		</p>
+	</section>
+
+	<section class="content-section">
+		<h2>How it goes</h2>
+		<p>
+			With you, not for you. We draft the roadmap together, put the product in real
+			hands fast, and watch the ideas that do not work fail early enough to be cheap.
+			Engineering makes sure the thing is built right. I make sure it is the right thing.
+		</p>
+		<p>
+			Every engagement ends the same way: your team can do this without me.
+		</p>
+	</section>
+
+	<section class="content-section closing">
+		<h2>Start a conversation</h2>
+		<p>
+			If any of this resonates, I'd love to talk. Book 30 minutes to go over what you
+			are working on and where I can help.
+		</p>
+		<a href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer" class="cta-button">
+			Find a time →
+		</a>
+		<p class="schedule-note">
+			Prefer email? Write me at <a class="email-link" href="https://www.linkedin.com/in/nicknorena/">hello at this domain</a>.
+		</p>
+	</section>
+</MarketingLayout>
+
+<script>
+	// Assemble the address in the browser so scrapers reading the raw HTML
+	// never see a complete email. The href above is a fallback (LinkedIn)
+	// for the rare no-JS visitor.
+	const user = 'hello';
+	const domain = 'peoplepurposeproduct.com';
+	const address = `${user}@${domain}`;
+	document.querySelectorAll('.email-link').forEach((el) => {
+		el.setAttribute('href', `mailto:${address}`);
+		el.textContent = address;
+	});
+</script>
+
+<style>
+	.page-header {
+		padding: 3em 0 2.5em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		margin-bottom: 3em;
+	}
+	.page-header h1 {
+		font-size: 3rem;
+		line-height: 1.1;
+	}
+	.page-header .lede {
+		margin-top: 1em;
+		max-width: 720px;
+		font-size: 1.1rem;
+		line-height: 1.6;
+	}
+
+	.services {
+		display: grid;
+		gap: 2.5em;
+		margin-bottom: 3em;
+		padding-bottom: 3em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.service {
+		max-width: 720px;
+	}
+	.service h2 {
+		font-size: 1.375rem;
+		margin: 0 0 0.4em;
+	}
+	.service .what {
+		margin: 0 0 0.6em;
+	}
+	.service .fit {
+		margin: 0;
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+	}
+
+	.content-section {
+		margin-bottom: 3em;
+		padding-bottom: 3em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+		max-width: 720px;
+	}
+	.content-section h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.75em;
+	}
+	.closing {
+		border-bottom: none;
+	}
+
+	.cta-button {
+		display: inline-block;
+		margin-top: 0.5em;
+		padding: 0.75em 1.5em;
+		background: var(--accent);
+		color: white;
+		text-decoration: none;
+		border-radius: 8px;
+		font-weight: 700;
+	}
+	.cta-button:hover {
+		background: var(--accent-dark);
+		color: white;
+	}
+	.schedule-note {
+		margin-top: 1.25em;
+		color: rgb(var(--gray));
+		font-size: 0.95rem;
+	}
+
+	@media (max-width: 720px) {
+		.page-header h1 {
+			font-size: 2.25rem;
+		}
+	}
+</style>

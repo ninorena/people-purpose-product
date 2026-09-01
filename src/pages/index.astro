@@ -21,16 +21,15 @@ const recentPosts = (await getCollection('blog'))
 		<Header />
 		<main>
 			<section class="intro">
-				<h1>Anyone can be a product owner now.</h1>
+				<p class="kicker">Product ownership for mission-driven teams</p>
+				<h1>You're closest to the problem. Product ownership belongs with you.</h1>
 				<p class="lede">
-					You have funding, a real problem, and now the tools to build without waiting on
-					anyone. So you build it. It ships on time, exactly to spec, and then it doesn't
-					do what you hoped, and there's no good word for what went wrong.
+					The job is deciding what to build, in what order, and how you'll know it helped
+					the people you serve.
 				</p>
 				<p class="claim">
 					<b>Most teams like yours never had a product owner. I work as yours, and I leave
-					your team able to do the job without me.</b> Where to invest. In what order. How
-					you'll know it worked.
+					your team able to do the job without me.</b>
 				</p>
 				<p class="intro-cta"><a href="/work">Three ways we could work together &rarr;</a></p>
 			</section>
@@ -47,6 +46,11 @@ const recentPosts = (await getCollection('blog'))
 					Almost everyone reaches that point alone. You shouldn't have to. Engineering makes
 					sure the thing gets built right. My job is making sure it's the right thing, and
 					I'd rather be next to you when it lands.
+				</p>
+				<p>
+					I will never know your impact space the way you do. That is why the work happens
+					with your people in the room: drafting the requirements, designing the experiments,
+					reading what comes back, making the call. You keep doing it after I'm gone.
 				</p>
 			</section>
 
@@ -97,8 +101,19 @@ const recentPosts = (await getCollection('blog'))
 	.intro .claim {
 		margin-top: 1.5em;
 	}
+	.intro .kicker {
+		margin: 0 0 0.7em;
+		font-size: 14px;
+		line-height: 1.4;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+	}
 	.intro .lede {
-		font-size: 1.125rem;
+		font-size: 1.35rem;
+		line-height: 1.45;
+		max-width: 58ch;
 	}
 	.moment {
 		padding-bottom: 2em;

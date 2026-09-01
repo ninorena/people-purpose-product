@@ -22,26 +22,10 @@ const recentPosts = (await getCollection('blog'))
 		<main>
 			<section class="intro">
 				<h1>Anyone can be a product owner now.</h1>
-				<p>
-					A client called me this spring about something I hadn't been hired for. He'd brought
-					me in to help build the thing. Now he wanted to know how to run a pilot, how to do
-					early sales, how to craft the narrative for a demo day in front of funders. That's
-					not how this started, I thought. But you're asking, so let's go.
-				</p>
-				<p>
-					I keep landing in that spot, and it usually looks the same. You know the people
-					you serve better than any consultant ever will. You have funding and a real
-					problem. And you can go build now, without a hire and without waiting for
-					permission. That part is new, and it's good. Then someone says they want a site
-					that helps people do a thing, and off it goes. It ships on time, exactly to spec,
-					and then it doesn't do what you hoped, and there's no good word for what went
-					wrong.
-				</p>
-				<p>
-					That's the most useful moment in this whole business, and almost everyone goes
-					through it alone. You shouldn't have to. Engineering makes sure the thing gets
-					built right. My job is making sure it's the right thing, and I'd rather be next
-					to you when it lands.
+				<p class="lede">
+					You have funding, a real problem, and now the tools to build without waiting on
+					anyone. So you build it. It ships on time, exactly to spec, and then it doesn't
+					do what you hoped, and there's no good word for what went wrong.
 				</p>
 				<p class="claim">
 					<b>Most teams like yours never had a product owner. I work as yours, and I leave
@@ -49,6 +33,21 @@ const recentPosts = (await getCollection('blog'))
 					you'll know it worked.
 				</p>
 				<p class="intro-cta"><a href="/work">Three ways we could work together &rarr;</a></p>
+			</section>
+
+			<section class="moment">
+				<h2>The most useful moment in this business</h2>
+				<p>
+					A client called me this spring about something I hadn't been hired for. He'd
+					brought me in to build the thing. Now he wanted to know how to run a pilot, how to
+					do early sales, how to craft the narrative for a demo day. That's not how this
+					started, I thought. But you're asking, so let's go.
+				</p>
+				<p>
+					Almost everyone reaches that point alone. You shouldn't have to. Engineering makes
+					sure the thing gets built right. My job is making sure it's the right thing, and
+					I'd rather be next to you when it lands.
+				</p>
 			</section>
 
 			<section class="recent-posts">
@@ -97,6 +96,21 @@ const recentPosts = (await getCollection('blog'))
 	}
 	.intro .claim {
 		margin-top: 1.5em;
+	}
+	.intro .lede {
+		font-size: 1.125rem;
+	}
+	.moment {
+		padding-bottom: 2em;
+		margin-bottom: 2em;
+		border-bottom: 1px solid rgb(var(--gray-light));
+	}
+	.moment h2 {
+		font-size: 1.5rem;
+		margin-bottom: 0.5em;
+	}
+	.moment p {
+		max-width: 66ch;
 	}
 	.intro p {
 		max-width: 66ch;

@@ -31,6 +31,13 @@ const recentPosts = (await getCollection('blog'))
 					<b>Most teams like yours never had a product owner. I work as yours, and I leave
 					your team able to do the job without me.</b>
 				</p>
+				<p class="scene">
+					A client called me this spring about something I hadn't been hired for. He'd
+					brought me in to build the thing. Now he wanted to know how to run a pilot, how to
+					do early sales, how to put together the story for demo day. That's not how this
+					started, I thought. But you're asking, so let's go. Almost everyone reaches that
+					point alone. You shouldn't have to.
+				</p>
 				<p class="intro-cta"><a href="/work">Three ways we could work together &rarr;</a></p>
 			</section>
 
@@ -78,7 +85,8 @@ const recentPosts = (await getCollection('blog'))
 		margin: 0 0 0.75em;
 		max-width: 24ch;
 	}
-	.intro .claim {
+	.intro .claim,
+	.intro .scene {
 		margin-top: 1.5em;
 	}
 	.intro .kicker {

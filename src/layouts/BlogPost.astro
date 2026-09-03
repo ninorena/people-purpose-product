@@ -1,90 +1,136 @@
 ---
 import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Header from '../components/Header.astro';
+import PostRows from '../components/PostRows.astro';
 
-type Props = CollectionEntry<'blog'>['data'] & { minutesRead?: number };
+type Props = CollectionEntry<'blog'>['data'] & { id?: string; minutesRead?: number };
 
-const { title, description, pubDate, updatedDate, heroImage, minutesRead } = Astro.props;
+const { id, title, description, pubDate, updatedDate, heroImage, minutesRead } = Astro.props;
+
+const morePosts = (await getCollection('blog'))
+	.filter((post) => post.id !== id)
+	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
+<!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} image={heroImage} />
-		<style>
-			main {
-				width: calc(100% - 2em);
-				max-width: 100%;
-				margin: 0;
-			}
-			.hero-image {
-				width: 100%;
-			}
-			.hero-image img {
-				display: block;
-				margin: 0 auto;
-				border-radius: 12px;
-				box-shadow: var(--box-shadow);
-				max-width: 480px;
-				width: 100%;
-				height: auto;
-			}
-			.prose {
-				width: 720px;
-				max-width: calc(100% - 2em);
-				margin: auto;
-				padding: 1em;
-				color: rgb(var(--gray-dark));
-			}
-			.title {
-				margin-bottom: 1em;
-				padding: 1em 0;
-				text-align: center;
-				line-height: 1;
-			}
-			.title h1 {
-				margin: 0 0 0.5em 0;
-			}
-			.date {
-				margin-bottom: 0.5em;
-				color: rgb(var(--gray));
-			}
-			.last-updated-on {
-				font-style: italic;
-			}
-		</style>
 	</head>
 
 	<body>
 		<Header />
 		<main>
 			<article>
-				<div class="hero-image">
-					{heroImage && <Image width={1020} height={510} src={heroImage} alt="" loading="eager"/>}
-				</div>
-				<div class="prose">
-					<div class="title">
-						<h1>{title}</h1>
-						<div class="date">
+				<div class="wrap">
+					<header class="measure title-block">
+						<p class="label">
 							<FormattedDate date={pubDate} />
-							{minutesRead && <span>&nbsp;&middot;&nbsp;{minutesRead} min read</span>}
-							{
-								updatedDate && (
-									<div class="last-updated-on">
-										Last updated on <FormattedDate date={updatedDate} />
-									</div>
-								)
-							}
-						</div>
-						<hr />
+							{minutesRead && <span> &middot; {minutesRead} min read</span>}
+							{updatedDate && <span> &middot; Updated <FormattedDate date={updatedDate} /></span>}
+						</p>
+						<h1>{title}</h1>
+						<p class="description">{description}</p>
+					</header>
+				</div>
+
+				{heroImage && (
+					<div class="wrap photo-block">
+						<Image class="photo" src={heroImage} width={2016} height={800} fit="cover" alt="" loading="eager" />
 					</div>
-					<slot />
+				)}
+
+				<div class="wrap">
+					<div class="measure prose">
+						<slot />
+					</div>
+				</div>
+
+				<div class="wrap">
+					<div class="measure practice">
+						<p>I work as the product owner for mission-driven teams. <a href="/work">Three ways we could work together &rarr;</a></p>
+					</div>
 				</div>
 			</article>
+
+			<section class="wrap more">
+				<PostRows label="More writing" posts={morePosts} />
+			</section>
 		</main>
 		<Footer />
 	</body>
 </html>
+
+<style>
+	.title-block {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 88px 0 48px;
+	}
+	.title-block h1 {
+		font-size: 52px;
+		line-height: 1.1;
+	}
+	.description {
+		font-size: 22px;
+		line-height: 1.45;
+		color: var(--muted);
+	}
+	.photo-block {
+		padding-bottom: 56px;
+	}
+	.photo {
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1008 / 400;
+		object-fit: cover;
+		display: block;
+		border-radius: 2px;
+	}
+	.prose {
+		padding-bottom: 56px;
+	}
+	.practice {
+		padding: 32px 0 40px;
+		border-top: 1px solid var(--rule);
+	}
+	.practice p {
+		font-size: 17px;
+		line-height: 1.5;
+		color: var(--muted);
+	}
+	.more {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 72px;
+	}
+	@media (max-width: 720px) {
+		.title-block {
+			padding: 48px 0 32px;
+			gap: 16px;
+		}
+		.title-block h1 {
+			font-size: 36px;
+		}
+		.description {
+			font-size: 20px;
+		}
+		.photo-block {
+			padding-bottom: 40px;
+		}
+		.prose {
+			padding-bottom: 40px;
+		}
+		.practice {
+			padding: 28px 0 32px;
+		}
+		.more {
+			padding-bottom: 56px;
+		}
+	}
+</style>

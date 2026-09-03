@@ -17,6 +17,6 @@ const { Content } = await render(post);
 const minutesRead = readingTimeMinutes(post.body ?? '');
 ---
 
-<BlogPost {...post.data} minutesRead={minutesRead}>
+<BlogPost {...post.data} id={post.id} minutesRead={minutesRead}>
 	<Content />
 </BlogPost>

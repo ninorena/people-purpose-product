@@ -3,6 +3,6 @@
 
 export const SITE_TITLE = 'People Purpose Product';
 export const SITE_DESCRIPTION =
-	'Most funded mission-driven teams never had a product owner. I work as theirs.';
+	'Fractional product ownership and product owner coaching for nonprofits and public-sector teams.';
 export const SCHEDULING_LINK = 'https://calendar.app.google/ZgCjgA8Mk3tosTmh9';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/nicknorena/';

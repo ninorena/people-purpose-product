@@ -15,34 +15,38 @@ const recentPosts = (await getCollection('blog'))
 	<section class="wrap hero">
 		<div class="hero-text">
 			<p class="label">Product ownership for mission-driven teams</p>
-			<h1>You're closest to the problem. Product ownership belongs with you.</h1>
+			<h1>Your team already has a product owner. It just isn't anyone's job yet.</h1>
 			<p class="lede">
-				The job is deciding what to build, in what order, and how you'll know it helped the
-				people you serve. Most teams like yours never had a product owner. I work as yours,
-				and I leave your team able to do the job without me.
+				Between what your users tell you and what ships, someone has to decide what the
+				product does and how it fits your mission. I translate one into the other, build by
+				build, and leave your team doing it without me.
 			</p>
-			<div class="cta-row">
+			<div class="cta-block">
 				<a class="primary" href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer">Book 30 minutes &rarr;</a>
-				<a class="secondary" href="/work">Three ways we could work together</a>
+				<p class="cta-note">
+					Bring the decision you're stuck on. You'll leave with my read on what to build
+					first, and one experiment you could run this month.
+				</p>
 			</div>
 		</div>
 		<Image class="portrait" src={portrait} width={600} height={750} alt="Nick Noreña" loading="eager" />
 	</section>
 
 	<section class="wrap ways">
-		<div class="label ruled">Three ways to work together</div>
+		<div class="label ruled">How we work together</div>
+		<p class="ways-intro">
+			Someone on your team is the product owner today, with or without the title. I can
+			take that seat, share it, or teach it. Which one depends on where you are, and it can
+			change partway through.
+		</p>
 		<div class="ways-grid">
 			<div class="way">
-				<h3>Product studio</h3>
-				<p>I own the roadmap and bring the engineers. You get a working product, and a team that can tell you why it was built this way.</p>
+				<h3><a href="/work">Fractional product owner</a></h3>
+				<p>The roadmap stays yours. I take the product owner seat on your team. Fits when you have engineers, and nobody deciding what they build.</p>
 			</div>
 			<div class="way">
-				<h3>Fractional product owner</h3>
-				<p>The roadmap stays yours. I take the product owner seat on your team and sit in the meetings.</p>
-			</div>
-			<div class="way">
-				<h3>Product owner coaching</h3>
-				<p>For the person already doing this job without the title. Then you keep doing it after I'm gone.</p>
+				<h3><a href="/work">Product owner coaching</a></h3>
+				<p>For the person already doing this job without the title. Fits when someone on your team has the instincts and has never had anyone to learn the craft from.</p>
 			</div>
 		</div>
 	</section>
@@ -71,6 +75,18 @@ const recentPosts = (await getCollection('blog'))
 		line-height: 1.45;
 		color: var(--body);
 	}
+	.cta-block {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+		align-items: flex-start;
+	}
+	.cta-note {
+		font-size: 17px;
+		line-height: 1.5;
+		color: var(--muted);
+		max-width: 520px;
+	}
 	.portrait {
 		width: 300px;
 		height: 375px;
@@ -85,11 +101,18 @@ const recentPosts = (await getCollection('blog'))
 		flex-direction: column;
 		padding-bottom: 72px;
 	}
+	.ways-intro {
+		font-size: 19px;
+		line-height: 1.55;
+		color: var(--body);
+		max-width: 760px;
+		padding-top: 28px;
+	}
 	.ways-grid {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 40px;
-		padding-top: 28px;
+		padding-top: 32px;
 	}
 	.way {
 		display: flex;
@@ -98,6 +121,12 @@ const recentPosts = (await getCollection('blog'))
 	}
 	.way h3 {
 		font-size: 22px;
+	}
+	.way h3 a {
+		color: var(--text);
+	}
+	.way h3 a:hover {
+		color: var(--link);
 	}
 	.way p {
 		font-size: 17px;

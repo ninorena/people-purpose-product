@@ -1,102 +1,177 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
+
+const influences = [
+	{
+		name: 'Shape Up',
+		href: 'https://basecamp.com/shapeup',
+		note: 'from Basecamp. Fixed time, variable scope. It’s why the budget is fixed and the scope moves.',
+	},
+	{
+		name: 'The Lean Startup',
+		href: 'https://theleanstartup.com/',
+		note: 'by Eric Ries. The experiment as the unit of work.',
+	},
+	{
+		name: 'Incorruptible',
+		href: 'https://www.simonandschuster.com/books/Incorruptible/Eric-Ries/9798893311860',
+		note: 'Eric Ries again. Build things that create more value than they take.',
+	},
+	{
+		name: 'Design thinking',
+		href: 'https://designthinking.ideo.com/',
+		note: 'as IDEO teaches it. Put the thing in real hands before you trust your own opinion of it.',
+	},
+	{
+		name: 'Pivotal Labs',
+		href: 'https://en.wikipedia.org/wiki/Pivotal_Labs',
+		note: 'where a team learns all of this by doing it next to someone for a few months.',
+	},
+];
 ---
 
 <MarketingLayout
 	title="Work | People Purpose Product"
-	description="Three ways to fill the product owner seat on a funded mission-driven team: a product studio, a fractional seat, and coaching for the person already doing the job."
+	description="Fractional product ownership and product owner coaching for mission-driven teams, and what a typical month looks like."
 >
 	<section class="wrap">
 		<div class="measure page-header">
 			<h1>Work</h1>
 			<p class="lede">
-				You know your impact space better than any consultant will. You have funding, and
-				now you can go build without waiting on a hire. That part is new, and it's good.
-			</p>
-			<p class="lede">
-				Backlogs and milestones are the easy part. The hard part is deciding where to
-				invest, and moving before you have all the information you'd like. That's the
-				gap. Here are three ways to close it, depending on what you already have.
+				Funded teams with a real problem come to me with one of two gaps: nobody in the
+				product owner seat, or someone in it who's never been shown the craft. Here's what I
+				do about each, and how to tell if it fits.
 			</p>
 		</div>
 	</section>
 
 	<section class="wrap services">
-		<div class="label ruled">Three ways to work together</div>
+		<div class="label ruled">How we work together</div>
 
 		<article class="service">
-			<div class="service-head">
-				<h2>Product studio</h2>
-				<p class="fit"><b>Fits when</b> you have funding and a real problem, and nobody inside to run the build.</p>
-			</div>
-			<div class="service-body">
-				<p>
-					You get a working product, and a team that can tell you why it was built this way
-					and not some other way. I own the roadmap and bring the engineers.
-				</p>
+			<h2>Fractional product owner</h2>
+			<p>
+				The roadmap stays yours. I take the product owner seat on your team and sit in the
+				meetings: drafting the requirements, designing the experiments, reading what comes
+				back, making the call with your people in the room.
+			</p>
+			<p>
+				A product manager who runs the product day to day is table stakes. The part that's
+				harder to find is ownership: deciding what gets built, in what order, and standing
+				behind the call. I do both.
+			</p>
+			<div class="fit-strip">
+				<div class="fit yes">
+					<span class="fit-k">Fits when</span>
+					<span class="fit-v">You already have engineers, and nobody deciding what they build.</span>
+				</div>
+				<div class="fit">
+					<span class="fit-k">Does not fit when</span>
+					<span class="fit-v">You have a mature backlog and want a technical product manager to run it. That's a different hire, and I'll say so on the call.</span>
+				</div>
 			</div>
 		</article>
 
 		<article class="service">
-			<div class="service-head">
-				<h2>Fractional product owner</h2>
-				<p class="fit"><b>Fits when</b> you already have engineers, and nobody deciding what they build.</p>
-			</div>
-			<div class="service-body">
-				<p>
-					The roadmap stays yours. I take the product owner seat on your team and sit in the
-					meetings: drafting the requirements, designing the experiments, reading what comes
-					back, making the call with your people in the room.
-				</p>
-				<p>
-					A product manager who runs the product day to day is table stakes. The part that's
-					harder to find is ownership: deciding what gets built, in what order, and standing
-					behind the call. I do both.
-				</p>
-			</div>
-		</article>
-
-		<article class="service">
-			<div class="service-head">
-				<h2>Product owner coaching</h2>
-				<p class="fit"><b>Fits when</b> someone on your team has the instincts and has never had anyone to learn the craft from.</p>
-			</div>
-			<div class="service-body">
-				<p>
-					For the person already doing this job without the title. We draft the roadmap
-					together, run the experiments together, and sit in it together when an idea
-					flops. Then you keep doing it after I'm gone.
-				</p>
+			<h2>Product owner coaching</h2>
+			<p>
+				For the person already doing this job without the title. We draft the roadmap
+				together, run the experiments together, and sit in it together when an idea
+				flops. Then you keep doing it after I'm gone.
+			</p>
+			<div class="fit-strip">
+				<div class="fit yes">
+					<span class="fit-k">Fits when</span>
+					<span class="fit-v">Someone on your team has the instincts and has never had anyone to learn the craft from.</span>
+				</div>
+				<div class="fit">
+					<span class="fit-k">Does not fit when</span>
+					<span class="fit-v">Nobody on the team has time in the seat. The coaching is the doing, so the person needs hours, not just interest.</span>
+				</div>
 			</div>
 		</article>
 	</section>
 
 	<section class="wrap">
-		<div class="measure how">
-			<h2>How we work</h2>
+		<div class="measure month">
+			<h2>What a typical month looks like</h2>
 			<p>
-				I can do it for you. I can teach you how. What I want is to do it with you: draft
-				the roadmap together, run the experiment, be uncomfortable together and watch our
-				ideas flop.
+				I can do it for you. I can teach you how. What works best is doing it with you.
 			</p>
+			<div class="once">
+				<span class="once-k">Before the first month</span>
+				<span>A 30-minute call</span>
+				<span>I sit in on one or two of your meetings</span>
+				<span>We prioritize the risks and assumptions, and draft a roadmap if the project needs one</span>
+			</div>
+			<div class="month-cols">
+				<div class="col every">
+					<div class="col-k">Every week</div>
+					<ol class="week-steps">
+						<li>We read what came back and make the call: keep it, change it, or drop it.</li>
+						<li>We write the next build, and the experiment that tells us whether it helped.</li>
+						<li>We build the smallest thing that tests it: a prototype, a form, or a feature.</li>
+						<li class="exp">It goes in real hands.</li>
+					</ol>
+					<div class="x4">× 4. One experiment a week is the aim. We move as fast as the learning allows.</div>
+				</div>
+				<div class="col">
+					<div class="col-k">End of the month</div>
+					<ul class="month-end">
+						<li>A readout: what we saw, and what we do next.</li>
+						<li>Engagements run month to month. We size next month's work to your budget. The scope moves. The invoice does not.</li>
+					</ul>
+				</div>
+			</div>
 			<p>
-				The flopping is the part people skip, and it's the part that pays. A client wanted a
-				chatbot to handle one step of their flow. We looked at it together and
-				realized a plain form would do that same job correctly every single time. The
-				chatbot's real use turned out to be telling us which steps should have been forms
-				all along. That's a smaller product than the one we started with, and a better one,
-				and no amount of prompting would have gotten us there.
+				Reading what came back is the part people skip, and it's the part that pays. A
+				client wanted a chatbot to handle one step of their flow. We looked at what came
+				back together and realized a plain form would do that job correctly every single
+				time. That's a smaller product than the one we started with, and a better one.
 			</p>
+			<div class="lists">
+				<div class="list">
+					<h3>What you get</h3>
+					<ul>
+						<li>A roadmap: what to build, in what order, and why.</li>
+						<li>Requirements for each build, written so engineering can build it once.</li>
+						<li>An experiment design for each build, so we know whether it helped.</li>
+						<li>A readout after each experiment: what we saw, and what we do next.</li>
+						<li>An evidence record a funder can read.</li>
+						<li>A team that can run this loop after I'm gone.</li>
+					</ul>
+				</div>
+				<div class="list">
+					<h3>What I need from you</h3>
+					<ul>
+						<li>One person who can meet weekly, get the right people in the room, and drive a decision.</li>
+						<li>A way to put the product in front of the people it serves.</li>
+						<li>Engineers. If you don't have them yet, I can introduce you to some I've worked with.</li>
+					</ul>
+				</div>
+			</div>
 			<p>
-				Every engagement ends the same way. Your team can do this without me.
+				Every engagement ends the same way. Your team runs the month without me.
 			</p>
 		</div>
 	</section>
 
 	<section class="wrap">
+		<div class="measure influences">
+			<h2>Where this comes from</h2>
+			<p>My school of product ownership had many teachers. A few I keep going back to:</p>
+			<ul>
+				{influences.map((i) => (
+					<li><a href={i.href} target="_blank" rel="noopener noreferrer">{i.name}</a>, {i.note}</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class="wrap">
 		<div class="measure closing">
-			<h2>Start a conversation</h2>
+			<h2>Let's talk</h2>
 			<p>
 				If any of this resonates, I'd love to talk. Book 30 minutes and tell me what
 				you're working on.
@@ -140,50 +215,179 @@ import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 		flex-direction: column;
 		padding-bottom: 32px;
 	}
+	/* Each service runs the full width: heading, body at the page measure,
+	   then a two-cell strip. The green rule marks the "fits" cell. */
 	.service {
-		display: grid;
-		grid-template-columns: 250px minmax(0, 1fr);
-		gap: 40px;
-		align-items: start;
-		padding: 26px 0;
-		border-bottom: 1px solid var(--rule-light);
-	}
-	.service-head {
 		display: flex;
 		flex-direction: column;
-		gap: 6px;
+		gap: 16px;
+		padding: 30px 0;
+		border-bottom: 1px solid var(--rule-light);
 	}
-	.service-head h2 {
+	.service h2 {
 		font-size: 26px;
 		line-height: 1.2;
 	}
-	.fit {
-		font-size: 16px;
-		line-height: 1.45;
-		color: var(--muted);
-	}
-	.service-body {
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-	}
-	.service-body p {
+	.service p {
+		max-width: var(--measure);
 		font-size: 18px;
 		line-height: 1.5;
 		color: var(--body);
 	}
+	.fit-strip {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 32px;
+		margin-top: 6px;
+	}
+	.fit {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding-top: 12px;
+		border-top: 1px solid var(--rule);
+	}
+	.fit.yes {
+		border-top-color: var(--link);
+	}
+	.fit-k {
+		font-size: 12px;
+		line-height: 1.4;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.fit-v {
+		font-size: 16px;
+		line-height: 1.45;
+		color: var(--body-soft);
+	}
 
-	.how {
+	.month,
+	.influences {
 		display: flex;
 		flex-direction: column;
 		gap: 18px;
 		padding: 32px 0 56px;
 	}
-	.how p,
+	.month p,
+	.influences p,
 	.closing p {
 		font-size: 19px;
 		line-height: 1.55;
 		color: var(--body);
+	}
+	/* The month: a "once" line, then every week beside the end of the month. */
+	.once {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 6px 28px;
+		align-items: baseline;
+		padding: 14px 0;
+		border-top: 1px solid var(--rule);
+		border-bottom: 1px solid var(--rule-light);
+		font-size: 16px;
+		color: var(--body-soft);
+	}
+	.once-k,
+	.col-k {
+		font-size: 12px;
+		line-height: 1.4;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.once-k {
+		flex-basis: 100%;
+	}
+	.once span:not(.once-k)::before {
+		content: '○  ';
+		font-size: 10px;
+		vertical-align: 2px;
+		color: var(--company);
+	}
+	.month-cols {
+		display: grid;
+		grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+		gap: 40px;
+	}
+	.col {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+		padding-top: 12px;
+		border-top: 1px solid var(--rule);
+	}
+	.col.every {
+		border-top-color: var(--link);
+	}
+	.week-steps,
+	.month-end {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		font-size: 18px;
+		line-height: 1.5;
+		color: var(--body);
+	}
+	.week-steps {
+		counter-reset: step;
+	}
+	.week-steps li {
+		display: grid;
+		grid-template-columns: 2.2em minmax(0, 1fr);
+		gap: 8px;
+		counter-increment: step;
+	}
+	.week-steps li::before {
+		content: counter(step) '.';
+		color: var(--muted);
+		font-variant-numeric: tabular-nums;
+	}
+	.week-steps li.exp::before {
+		content: '●';
+		color: var(--link);
+		font-size: 11px;
+		padding-top: 6px;
+	}
+	.x4 {
+		font-size: 15px;
+		color: var(--muted);
+	}
+	.lists {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 40px;
+		padding-top: 8px;
+	}
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.list h3 {
+		font-size: 20px;
+	}
+	.list ul,
+	.influences ul {
+		padding-left: 1.2em;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-size: 17px;
+		line-height: 1.5;
+		color: var(--body-soft);
+	}
+	.influences ul {
+		font-size: 19px;
+		color: var(--body);
+	}
+	.influences {
+		border-top: 1px solid var(--rule);
+		padding-top: 48px;
 	}
 
 	.closing {
@@ -203,15 +407,31 @@ import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 			font-size: 20px;
 		}
 		.service {
-			grid-template-columns: 1fr;
 			gap: 14px;
-			padding: 22px 0;
+			padding: 24px 0;
 		}
-		.service-head h2 {
+		.service h2 {
 			font-size: 24px;
 		}
-		.how {
+		.fit-strip {
+			grid-template-columns: 1fr;
+			gap: 14px;
+		}
+		.month,
+		.influences {
 			padding: 24px 0 48px;
+		}
+		.lists {
+			grid-template-columns: 1fr;
+			gap: 24px;
+		}
+		.once {
+			flex-direction: column;
+			gap: 6px;
+		}
+		.month-cols {
+			grid-template-columns: 1fr;
+			gap: 24px;
 		}
 		.closing {
 			padding: 40px 0 56px;

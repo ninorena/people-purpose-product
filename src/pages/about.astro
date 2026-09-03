@@ -4,14 +4,24 @@ import MarketingLayout from '../layouts/MarketingLayout.astro';
 import portrait from '../assets/nick-portrait.jpg';
 import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 
-const pastWork = [
+// TODO(Nick): replace from the LinkedIn Experience section.
+const workedAt = ['Kromatic', 'Exygy', 'Crow Flies'];
+
+const workedWith = [
+	'City of Detroit',
+	'Bay Area Housing Finance Authority',
+	'San Francisco DCYF',
+	"Driver's Seat Cooperative",
+	'The Nature Conservancy',
+	'Nordic Innovation House',
+	'United Way',
+	'ChildFund International',
+	'Cancer Research UK',
+	'US Government',
 	'Siemens',
 	'Unilever',
 	'General Mills',
-	'United Way',
-	'US Government',
-	'City of Detroit',
-	"Driver's Seat Cooperative",
+	'Walmart Labs',
 ];
 ---
 
@@ -28,7 +38,6 @@ const pastWork = [
 				I think out loud about that work. The purpose is simple: help the helpers of the
 				world have a bigger impact through software.
 			</p>
-			<a class="lede-cta" href="/work">The three ways I work with teams &rarr;</a>
 		</div>
 	</section>
 
@@ -63,33 +72,24 @@ const pastWork = [
 	</section>
 
 	<section class="wrap">
-		<div class="past-work">
-			<div class="label">Past work with</div>
-			<div class="companies">
-				{pastWork.map((name) => <span>{name}</span>)}
+		<div class="names">
+			<div class="names-row">
+				<div class="label">Worked at</div>
+				<div class="companies">
+					{workedAt.map((name) => <span>{name}</span>)}
+				</div>
+			</div>
+			<div class="names-row">
+				<div class="label">Worked with</div>
+				<div class="companies">
+					{workedWith.map((name) => <span>{name}</span>)}
+				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="wrap">
-		<div class="measure client-call">
-			<div class="label">From a client call this spring</div>
-			<p>
-				A client called me about something I hadn't been hired for. He'd brought me in to
-				build the thing. Now he wanted to know how to run a pilot, how to do early sales,
-				how to put together the story for demo day. That's not how this started, I thought.
-				But you're asking, so let's go. Almost everyone reaches that point alone. You
-				shouldn't have to.
-			</p>
-		</div>
-	</section>
-
-	<section class="wrap">
 		<div class="measure closing">
-			<p>
-				When a project needs more hands, I bring in a small group of experienced
-				collaborators whose judgment I trust.
-			</p>
 			<p>
 				If any of this resonates, I'd love to talk. Book a 30 minute call to go over what
 				you are working on and how I can help.
@@ -127,10 +127,6 @@ const pastWork = [
 		font-size: 22px;
 		line-height: 1.45;
 		color: var(--body);
-	}
-	.lede-cta {
-		font-size: 19px;
-		font-weight: 500;
 	}
 
 	.person {
@@ -176,38 +172,30 @@ const pastWork = [
 		color: var(--body);
 	}
 
-	.past-work {
+	.names {
 		display: flex;
 		flex-direction: column;
-		gap: 22px;
+		gap: 36px;
 		padding: 40px 0 48px;
 		border-top: 1px solid var(--rule);
+	}
+	.names-row {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
 	}
 	.companies {
 		display: flex;
 		flex-wrap: wrap;
-		gap: 18px 48px;
+		gap: 14px 40px;
 		align-items: baseline;
 	}
 	.companies span {
-		font-size: 24px;
+		font-size: 22px;
 		font-weight: 500;
 		color: var(--company);
 		letter-spacing: 0.01em;
 		white-space: nowrap;
-	}
-
-	.client-call {
-		display: flex;
-		flex-direction: column;
-		gap: 14px;
-		padding: 40px 0 48px;
-		border-top: 1px solid var(--rule);
-	}
-	.client-call p {
-		font-size: 19px;
-		line-height: 1.55;
-		color: var(--body-soft);
 	}
 
 	.closing {
@@ -236,14 +224,13 @@ const pastWork = [
 			height: 250px;
 		}
 		.companies {
-			gap: 12px 20px;
+			gap: 10px 20px;
 		}
 		.companies span {
-			font-size: 20px;
+			font-size: 19px;
 			white-space: normal;
 		}
-		.past-work,
-		.client-call {
+		.names {
 			padding: 32px 0 40px;
 		}
 		.closing {

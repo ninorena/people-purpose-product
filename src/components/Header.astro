@@ -1,70 +1,74 @@
 ---
 import { SITE_TITLE } from '../consts';
-import HeaderLink from './HeaderLink.astro';
+
+const links = [
+	{ href: '/work', label: 'Work' },
+	{ href: '/blog', label: 'Blog' },
+	{ href: '/about', label: 'About' },
+];
+
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+const section = '/' + (pathname.match(/[^\/]+/g)?.[0] || '');
 ---
 
 <header>
-	<nav>
-		<h2><a href="/">{SITE_TITLE}</a></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/work">Work</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
+	<nav class="wrap">
+		<a class="name" href="/">{SITE_TITLE}</a>
+		<div class="links">
+			{links.map((l) => (
+				<a href={l.href} class:list={{ active: l.href === section }} aria-current={l.href === section ? 'page' : undefined}>
+					{l.label}
+				</a>
+			))}
 		</div>
 	</nav>
 </header>
 <style>
 	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	h2 a,
-	h2 a.active {
-		text-decoration: none;
+		border-bottom: 1px solid var(--rule);
 	}
 	nav {
 		display: flex;
 		flex-wrap: wrap;
-		align-items: center;
 		justify-content: space-between;
-		column-gap: 0.5em;
+		align-items: baseline;
+		gap: 8px 32px;
+		padding-top: 28px;
+		padding-bottom: 24px;
 	}
-	.internal-links {
-		display: flex;
-	}
-	nav a {
-		padding: 1em 0.5em;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
+	.name {
+		color: var(--text);
+		font-size: 20px;
+		font-weight: 500;
+		letter-spacing: 0.01em;
 		white-space: nowrap;
 	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
+	.links {
+		display: flex;
+		gap: 32px;
+		font-size: 17px;
 	}
-	/* Narrow screens: title centered on its own row, links row centered below */
-	@media (max-width: 540px) {
+	.links a {
+		color: var(--text);
+		border-bottom: 2px solid transparent;
+		white-space: nowrap;
+	}
+	.links a.active {
+		border-bottom-color: var(--link);
+	}
+	.name:hover,
+	.links a:hover {
+		color: var(--link-hover);
+		text-decoration: none;
+	}
+	@media (max-width: 720px) {
 		nav {
-			justify-content: center;
+			padding-top: 20px;
+			padding-bottom: 16px;
 		}
-		h2 {
-			width: 100%;
-			text-align: center;
-		}
-		h2 a {
-			padding: 0.75em 0.5em 0.25em;
-		}
-		.internal-links a {
-			padding: 0.25em 0.75em 0.75em;
+		.links {
+			gap: 24px;
+			font-size: 16px;
 		}
 	}
 </style>

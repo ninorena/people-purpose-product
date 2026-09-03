@@ -1,0 +1,74 @@
+---
+// A labelled list of posts as tight rows: title left, date right, then
+// a link to the full list. Used on Home ("Writing") and under each post
+// ("More writing").
+import type { CollectionEntry } from 'astro:content';
+import FormattedDate from './FormattedDate.astro';
+
+interface Props {
+	label: string;
+	posts: CollectionEntry<'blog'>[];
+}
+
+const { label, posts } = Astro.props;
+---
+
+<div class="rows">
+	<div class="label ruled">{label}</div>
+	<ul>
+		{posts.map((post) => (
+			<li>
+				<a href={`/blog/${post.id}/`}>
+					<span class="title">{post.data.title}</span>
+					<span class="date"><FormattedDate date={post.data.pubDate} /></span>
+				</a>
+			</li>
+		))}
+	</ul>
+	<a class="all" href="/blog">All posts &rarr;</a>
+</div>
+<style>
+	.rows {
+		display: flex;
+		flex-direction: column;
+	}
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+	li a {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: baseline;
+		gap: 2px 24px;
+		padding: 18px 0;
+		border-bottom: 1px solid var(--rule-light);
+		color: var(--text);
+		font-size: 21px;
+		line-height: 1.3;
+	}
+	li a:hover {
+		color: var(--link-hover);
+		text-decoration: none;
+	}
+	li a:hover .title {
+		text-decoration: underline;
+	}
+	.date {
+		font-size: 15px;
+		color: var(--muted);
+		white-space: nowrap;
+	}
+	.all {
+		padding-top: 18px;
+		font-size: 17px;
+	}
+	@media (max-width: 720px) {
+		li a {
+			font-size: 19px;
+			padding: 14px 0;
+		}
+	}
+</style>

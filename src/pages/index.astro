@@ -21,24 +21,34 @@ const recentPosts = (await getCollection('blog'))
 		<Header />
 		<main>
 			<section class="intro">
-				<h1>Welcome, Reader</h1>
-				<p>
-					<b>People Purpose Product</b> is a blog exploring the intersection of people, their purpose, and the products
-					they build and use.
+				<p class="kicker">Product ownership for mission-driven teams</p>
+				<h1>You're closest to the problem. Product ownership belongs with you.</h1>
+				<p class="lede">
+					The job is deciding what to build, in what order, and how you'll know it helped
+					the people you serve.
 				</p>
-				<p>
-					The tools to build software are catching up to the people who know what's worth building. 
-					Teachers, caseworkers, organizers, founders: people who have spent years close to real problems 
-					can now turn what they know into working products. I write about what that makes possible, 
-					and what it asks of us.
+				<p class="claim">
+					<b>Most teams like yours never had a product owner. I work as yours, and I leave
+					your team able to do the job without me.</b>
 				</p>
-				<p>
-					Every post here starts with some version of the same question: <b>now that anyone can build, what should we?</b>
+				<p class="scene">
+					A client called me this spring about something I hadn't been hired for. He'd
+					brought me in to build the thing. Now he wanted to know how to run a pilot, how to
+					do early sales, how to put together the story for demo day. That's not how this
+					started, I thought. But you're asking, so let's go. Almost everyone reaches that
+					point alone. You shouldn't have to.
 				</p>
+				<p class="intro-cta"><a href="/work">Three ways we could work together &rarr;</a></p>
 			</section>
 
 			<section class="recent-posts">
-				<h2>Recent posts</h2>
+				<h2>Writing</h2>
+				<p class="writing-note">
+					The tools to build software are catching up to the people who know what's worth building.
+					Teachers, caseworkers, organizers, founders: people who have spent years close to real
+					problems can now turn what they know into working products. I write about what that
+					makes possible, and what it asks of us.
+				</p>
 				<ul>
 					{recentPosts.map((post) => (
 						<li>
@@ -58,13 +68,6 @@ const recentPosts = (await getCollection('blog'))
 				</ul>
 				<p class="all-posts"><a href="/blog">All posts →</a></p>
 			</section>
-
-			<section class="work-note">
-				<p>
-					I also work with mission-driven teams on their products —
-					<a href="/about#work-with-me">more here</a>.
-				</p>
-			</section>
 		</main>
 		<Footer />
 	</body>
@@ -76,9 +79,48 @@ const recentPosts = (await getCollection('blog'))
 		margin-bottom: 2em;
 		border-bottom: 1px solid rgb(var(--gray-light));
 	}
+	.intro h1 {
+		font-size: 2.25rem;
+		line-height: 1.2;
+		margin: 0 0 0.75em;
+		max-width: 24ch;
+	}
+	.intro .claim,
+	.intro .scene {
+		margin-top: 1.5em;
+	}
+	.intro .kicker {
+		margin: 0 0 0.7em;
+		font-size: 14px;
+		line-height: 1.4;
+		font-weight: 700;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+		color: rgb(var(--gray));
+	}
+	.intro .lede {
+		font-size: 1.35rem;
+		line-height: 1.45;
+		max-width: 58ch;
+	}
+	.intro p {
+		max-width: 66ch;
+	}
+	.intro-cta a {
+		font-weight: 700;
+		color: var(--accent);
+		text-decoration: none;
+	}
+	.intro-cta a:hover {
+		text-decoration: underline;
+	}
 	.recent-posts h2 {
 		font-size: 1.5rem;
-		margin-bottom: 1em;
+		margin-bottom: 0.5em;
+	}
+	.writing-note {
+		max-width: 66ch;
+		margin: 0 0 1.75em;
 	}
 	.recent-posts ul {
 		list-style: none;
@@ -127,19 +169,10 @@ const recentPosts = (await getCollection('blog'))
 	.all-posts a:hover {
 		text-decoration: underline;
 	}
-	.work-note {
-		margin-top: 3em;
-		padding-top: 2em;
-		border-top: 1px solid rgb(var(--gray-light));
-	}
-	.work-note p {
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
-	}
-	.work-note a {
-		color: var(--accent);
-	}
 	@media (max-width: 720px) {
+		.intro h1 {
+			font-size: 1.75rem;
+		}
 		.recent-posts .thumb {
 			width: 120px;
 			height: 80px;

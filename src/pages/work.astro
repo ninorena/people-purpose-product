@@ -11,7 +11,7 @@ const influences = [
 	{
 		name: 'The Lean Startup',
 		href: 'https://theleanstartup.com/',
-		note: 'Eric Ries. The experiment as the unit of work.',
+		note: 'by Eric Ries. The experiment as the unit of work.',
 	},
 	{
 		name: 'Design thinking',
@@ -21,7 +21,7 @@ const influences = [
 	{
 		name: 'Pivotal Labs',
 		href: 'https://en.wikipedia.org/wiki/Pivotal_Labs',
-		note: 'A team learns all of this by doing it next to someone for a few months.',
+		note: 'where a team learns all of this by doing it next to someone for a few months.',
 	},
 ];
 ---
@@ -34,9 +34,9 @@ const influences = [
 		<div class="measure page-header">
 			<h1>Work</h1>
 			<p class="lede">
-				I work as the product owner for teams that have funding and a real problem, and
-				either nobody in the seat or someone in it who's never been shown the craft. Here's
-				what that looks like, and how to tell if it fits.
+				Funded teams with a real problem come to me with one of two gaps: nobody in the
+				product owner seat, or someone in it who's never been shown the craft. Here's what I
+				do about each, and how to tell if it fits.
 			</p>
 		</div>
 	</section>
@@ -122,7 +122,7 @@ const influences = [
 					<ul>
 						<li>One person who can meet weekly, get the right people in the room, and drive a decision.</li>
 						<li>A way to put the product in front of the people it serves.</li>
-						<li>Engineers, or an introduction to some I've worked with.</li>
+						<li>Engineers. If you don't have them yet, I can introduce you to some I've worked with.</li>
 					</ul>
 				</div>
 			</div>
@@ -238,13 +238,27 @@ const influences = [
 		color: var(--body);
 	}
 	.steps {
-		padding-left: 1.4em;
+		list-style: none;
+		padding: 0;
+		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: 10px;
 		font-size: 19px;
 		line-height: 1.5;
 		color: var(--body);
+		counter-reset: step;
+	}
+	.steps li {
+		display: grid;
+		grid-template-columns: 2.2em minmax(0, 1fr);
+		gap: 8px;
+		counter-increment: step;
+	}
+	.steps li::before {
+		content: counter(step) '.';
+		color: var(--muted);
+		font-variant-numeric: tabular-nums;
 	}
 	.lists {
 		display: grid;

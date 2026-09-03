@@ -14,6 +14,11 @@ const influences = [
 		note: 'by Eric Ries. The experiment as the unit of work.',
 	},
 	{
+		name: 'Incorruptible',
+		href: 'https://www.simonandschuster.com/books/Incorruptible/Eric-Ries/9798893311860',
+		note: 'Eric Ries again. Build things that create more value than they take.',
+	},
+	{
 		name: 'Design thinking',
 		href: 'https://designthinking.ideo.com/',
 		note: 'as IDEO teaches it. Put the thing in real hands before you trust your own opinion of it.',
@@ -45,37 +50,45 @@ const influences = [
 		<div class="label ruled">How we work together</div>
 
 		<article class="service">
-			<div class="service-head">
-				<h2>Fractional product owner</h2>
-				<p class="fit"><b>Fits when</b> you already have engineers, and nobody deciding what they build.</p>
-				<p class="fit"><b>Does not fit when</b> you have a mature backlog and want a technical product manager to run it. That's a different hire, and I'll say so on the call.</p>
-			</div>
-			<div class="service-body">
-				<p>
-					The roadmap stays yours. I take the product owner seat on your team and sit in the
-					meetings: drafting the requirements, designing the experiments, reading what comes
-					back, making the call with your people in the room.
-				</p>
-				<p>
-					A product manager who runs the product day to day is table stakes. The part that's
-					harder to find is ownership: deciding what gets built, in what order, and standing
-					behind the call. I do both.
-				</p>
+			<h2>Fractional product owner</h2>
+			<p>
+				The roadmap stays yours. I take the product owner seat on your team and sit in the
+				meetings: drafting the requirements, designing the experiments, reading what comes
+				back, making the call with your people in the room.
+			</p>
+			<p>
+				A product manager who runs the product day to day is table stakes. The part that's
+				harder to find is ownership: deciding what gets built, in what order, and standing
+				behind the call. I do both.
+			</p>
+			<div class="fit-strip">
+				<div class="fit yes">
+					<span class="fit-k">Fits when</span>
+					<span class="fit-v">You already have engineers, and nobody deciding what they build.</span>
+				</div>
+				<div class="fit">
+					<span class="fit-k">Does not fit when</span>
+					<span class="fit-v">You have a mature backlog and want a technical product manager to run it. That's a different hire, and I'll say so on the call.</span>
+				</div>
 			</div>
 		</article>
 
 		<article class="service">
-			<div class="service-head">
-				<h2>Product owner coaching</h2>
-				<p class="fit"><b>Fits when</b> someone on your team has the instincts and has never had anyone to learn the craft from.</p>
-				<p class="fit"><b>Does not fit when</b> nobody on the team has time in the seat. The coaching is the doing, so the person needs hours, not just interest.</p>
-			</div>
-			<div class="service-body">
-				<p>
-					For the person already doing this job without the title. We draft the roadmap
-					together, run the experiments together, and sit in it together when an idea
-					flops. Then you keep doing it after I'm gone.
-				</p>
+			<h2>Product owner coaching</h2>
+			<p>
+				For the person already doing this job without the title. We draft the roadmap
+				together, run the experiments together, and sit in it together when an idea
+				flops. Then you keep doing it after I'm gone.
+			</p>
+			<div class="fit-strip">
+				<div class="fit yes">
+					<span class="fit-k">Fits when</span>
+					<span class="fit-v">Someone on your team has the instincts and has never had anyone to learn the craft from.</span>
+				</div>
+				<div class="fit">
+					<span class="fit-k">Does not fit when</span>
+					<span class="fit-v">Nobody on the team has time in the seat. The coaching is the doing, so the person needs hours, not just interest.</span>
+				</div>
 			</div>
 		</article>
 	</section>
@@ -91,7 +104,7 @@ const influences = [
 				<li>I sit in on how your product work runs today. One or two meetings.</li>
 				<li>We draft the roadmap together.</li>
 				<li>We write the requirements for the first build, and the experiment that tells us whether it helped.</li>
-				<li>Engineering builds it. We put it in real hands fast.</li>
+				<li>We build the smallest thing that tests it: a prototype, a form, or a feature engineering ships. Then we put it in real hands fast.</li>
 				<li>We read what came back together, and we make the call: keep it, change it, or drop it.</li>
 				<li>Steps 4 to 6 repeat. The goal is one experiment a week.</li>
 			</ol>
@@ -190,37 +203,52 @@ const influences = [
 		flex-direction: column;
 		padding-bottom: 32px;
 	}
+	/* Each service runs the full width: heading, body at the page measure,
+	   then a two-cell strip. The green rule marks the "fits" cell. */
 	.service {
-		display: grid;
-		grid-template-columns: 250px minmax(0, 1fr);
-		gap: 40px;
-		align-items: start;
-		padding: 26px 0;
-		border-bottom: 1px solid var(--rule-light);
-	}
-	.service-head {
 		display: flex;
 		flex-direction: column;
-		gap: 10px;
+		gap: 16px;
+		padding: 30px 0;
+		border-bottom: 1px solid var(--rule-light);
 	}
-	.service-head h2 {
+	.service h2 {
 		font-size: 26px;
 		line-height: 1.2;
 	}
-	.fit {
-		font-size: 16px;
-		line-height: 1.45;
-		color: var(--muted);
-	}
-	.service-body {
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-	}
-	.service-body p {
+	.service p {
+		max-width: var(--measure);
 		font-size: 18px;
 		line-height: 1.5;
 		color: var(--body);
+	}
+	.fit-strip {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 32px;
+		margin-top: 6px;
+	}
+	.fit {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+		padding-top: 12px;
+		border-top: 1px solid var(--rule);
+	}
+	.fit.yes {
+		border-top-color: var(--link);
+	}
+	.fit-k {
+		font-size: 12px;
+		line-height: 1.4;
+		letter-spacing: 0.12em;
+		text-transform: uppercase;
+		color: var(--muted);
+	}
+	.fit-v {
+		font-size: 16px;
+		line-height: 1.45;
+		color: var(--body-soft);
 	}
 
 	.month,
@@ -310,12 +338,15 @@ const influences = [
 			font-size: 20px;
 		}
 		.service {
+			gap: 14px;
+			padding: 24px 0;
+		}
+		.service h2 {
+			font-size: 24px;
+		}
+		.fit-strip {
 			grid-template-columns: 1fr;
 			gap: 14px;
-			padding: 22px 0;
-		}
-		.service-head h2 {
-			font-size: 24px;
 		}
 		.month,
 		.influences {

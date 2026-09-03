@@ -1,182 +1,134 @@
 ---
-import { getCollection } from 'astro:content';
 import { Image } from 'astro:assets';
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import FormattedDate from '../components/FormattedDate.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import { getCollection } from 'astro:content';
+import MarketingLayout from '../layouts/MarketingLayout.astro';
+import PostRows from '../components/PostRows.astro';
+import portrait from '../assets/nick-portrait.jpg';
+import { SCHEDULING_LINK, SITE_DESCRIPTION, SITE_TITLE } from '../consts';
 
 const recentPosts = (await getCollection('blog'))
 	.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
 	.slice(0, 3);
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section class="intro">
-				<p class="kicker">Product ownership for mission-driven teams</p>
-				<h1>You're closest to the problem. Product ownership belongs with you.</h1>
-				<p class="lede">
-					The job is deciding what to build, in what order, and how you'll know it helped
-					the people you serve.
-				</p>
-				<p class="claim">
-					<b>Most teams like yours never had a product owner. I work as yours, and I leave
-					your team able to do the job without me.</b>
-				</p>
-				<p class="scene">
-					A client called me this spring about something I hadn't been hired for. He'd
-					brought me in to build the thing. Now he wanted to know how to run a pilot, how to
-					do early sales, how to put together the story for demo day. That's not how this
-					started, I thought. But you're asking, so let's go. Almost everyone reaches that
-					point alone. You shouldn't have to.
-				</p>
-				<p class="intro-cta"><a href="/work">Three ways we could work together &rarr;</a></p>
-			</section>
+<MarketingLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<section class="wrap hero">
+		<div class="hero-text">
+			<p class="label">Product ownership for mission-driven teams</p>
+			<h1>You're closest to the problem. Product ownership belongs with you.</h1>
+			<p class="lede">
+				The job is deciding what to build, in what order, and how you'll know it helped the
+				people you serve. Most teams like yours never had a product owner. I work as yours,
+				and I leave your team able to do the job without me.
+			</p>
+			<div class="cta-row">
+				<a class="primary" href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer">Book 30 minutes &rarr;</a>
+				<a class="secondary" href="/work">Three ways we could work together</a>
+			</div>
+		</div>
+		<Image class="portrait" src={portrait} width={600} height={750} alt="Nick Noreña" loading="eager" />
+	</section>
 
-			<section class="recent-posts">
-				<h2>Writing</h2>
-				<p class="writing-note">
-					The tools to build software are catching up to the people who know what's worth building.
-					Teachers, caseworkers, organizers, founders: people who have spent years close to real
-					problems can now turn what they know into working products. I write about what that
-					makes possible, and what it asks of us.
-				</p>
-				<ul>
-					{recentPosts.map((post) => (
-						<li>
-							<a href={`/blog/${post.id}/`}>
-								{post.data.heroImage && (
-									<Image width={360} height={240} src={post.data.heroImage} alt="" class="thumb" />
-								)}
-								<div class="post-text">
-									<h3 class="title">{post.data.title}</h3>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</div>
-							</a>
-						</li>
-					))}
-				</ul>
-				<p class="all-posts"><a href="/blog">All posts →</a></p>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+	<section class="wrap ways">
+		<div class="label ruled">Three ways to work together</div>
+		<div class="ways-grid">
+			<div class="way">
+				<h3>Product studio</h3>
+				<p>I own the roadmap and bring the engineers. You get a working product, and a team that can tell you why it was built this way.</p>
+			</div>
+			<div class="way">
+				<h3>Fractional product owner</h3>
+				<p>The roadmap stays yours. I take the product owner seat on your team and sit in the meetings.</p>
+			</div>
+			<div class="way">
+				<h3>Product owner coaching</h3>
+				<p>For the person already doing this job without the title. Then you keep doing it after I'm gone.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="wrap writing">
+		<PostRows label="Writing" posts={recentPosts} />
+	</section>
+</MarketingLayout>
 
 <style>
-	.intro {
-		padding-bottom: 2em;
-		margin-bottom: 2em;
-		border-bottom: 1px solid rgb(var(--gray-light));
+	.hero {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 300px;
+		gap: 64px;
+		align-items: start;
+		padding-top: 88px;
+		padding-bottom: 88px;
 	}
-	.intro h1 {
-		font-size: 2.25rem;
-		line-height: 1.2;
-		margin: 0 0 0.75em;
-		max-width: 24ch;
-	}
-	.intro .claim,
-	.intro .scene {
-		margin-top: 1.5em;
-	}
-	.intro .kicker {
-		margin: 0 0 0.7em;
-		font-size: 14px;
-		line-height: 1.4;
-		font-weight: 700;
-		letter-spacing: 0.08em;
-		text-transform: uppercase;
-		color: rgb(var(--gray));
-	}
-	.intro .lede {
-		font-size: 1.35rem;
-		line-height: 1.45;
-		max-width: 58ch;
-	}
-	.intro p {
-		max-width: 66ch;
-	}
-	.intro-cta a {
-		font-weight: 700;
-		color: var(--accent);
-		text-decoration: none;
-	}
-	.intro-cta a:hover {
-		text-decoration: underline;
-	}
-	.recent-posts h2 {
-		font-size: 1.5rem;
-		margin-bottom: 0.5em;
-	}
-	.writing-note {
-		max-width: 66ch;
-		margin: 0 0 1.75em;
-	}
-	.recent-posts ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-	}
-	.recent-posts li {
-		margin-bottom: 1.5em;
-	}
-	.recent-posts a {
+	.hero-text {
 		display: flex;
-		align-items: center;
-		gap: 1.25em;
-		text-decoration: none;
+		flex-direction: column;
+		gap: 28px;
 	}
-	.recent-posts .thumb {
-		width: 180px;
-		height: 120px;
-		min-width: 180px;
+	.lede {
+		font-size: 23px;
+		line-height: 1.45;
+		color: var(--body);
+	}
+	.portrait {
+		width: 300px;
+		height: 375px;
 		object-fit: cover;
-		border-radius: 8px;
+		display: block;
+		margin-top: 36px;
+		border-radius: 2px;
 	}
-	.recent-posts a:hover .thumb {
-		box-shadow: var(--box-shadow);
+	.ways,
+	.writing {
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 72px;
 	}
-	.recent-posts .title {
-		margin: 0;
-		color: rgb(var(--black));
-		font-size: 1.25em;
-		line-height: 1.3;
+	.ways-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 40px;
+		padding-top: 28px;
 	}
-	.recent-posts a:hover .title,
-	.recent-posts a:hover .date {
-		color: var(--accent);
+	.way {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
 	}
-	.recent-posts .date {
-		margin: 0.25em 0 0;
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
+	.way h3 {
+		font-size: 22px;
 	}
-	.all-posts a {
-		font-weight: 700;
-		color: var(--accent);
-		text-decoration: none;
-	}
-	.all-posts a:hover {
-		text-decoration: underline;
+	.way p {
+		font-size: 17px;
+		line-height: 1.5;
+		color: var(--body-soft);
 	}
 	@media (max-width: 720px) {
-		.intro h1 {
-			font-size: 1.75rem;
+		.hero {
+			grid-template-columns: 1fr;
+			gap: 40px;
+			padding-top: 48px;
+			padding-bottom: 56px;
 		}
-		.recent-posts .thumb {
-			width: 120px;
-			height: 80px;
-			min-width: 120px;
+		.hero-text {
+			gap: 22px;
+		}
+		.lede {
+			font-size: 20px;
+		}
+		.portrait {
+			width: 200px;
+			height: 250px;
+			margin-top: 0;
+		}
+		.ways-grid {
+			grid-template-columns: 1fr;
+			gap: 28px;
+		}
+		.ways,
+		.writing {
+			padding-bottom: 56px;
 		}
 	}
 </style>

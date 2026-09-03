@@ -1,102 +1,111 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
-
-const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
+import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 ---
 
 <MarketingLayout
 	title="Work | People Purpose Product"
 	description="Three ways to fill the product owner seat on a funded mission-driven team: a product studio, a fractional seat, and coaching for the person already doing the job."
 >
-	<section class="page-header">
-		<h1>Work</h1>
-		<p class="lede">
-			You know your impact space better than any consultant will. You have funding, and
-			now you can go build without waiting on a hire. That part is new, and it's good.
-		</p>
-		<p class="lede">
-			Backlogs and milestones are the easy part. The hard part is deciding where to
-			invest, and moving before you have all the information you'd like. That's the
-			gap. Here are three ways to close it, depending on what you already have.
-		</p>
+	<section class="wrap">
+		<div class="measure page-header">
+			<h1>Work</h1>
+			<p class="lede">
+				You know your impact space better than any consultant will. You have funding, and
+				now you can go build without waiting on a hire. That part is new, and it's good.
+			</p>
+			<p class="lede">
+				Backlogs and milestones are the easy part. The hard part is deciding where to
+				invest, and moving before you have all the information you'd like. That's the
+				gap. Here are three ways to close it, depending on what you already have.
+			</p>
+		</div>
 	</section>
 
-	<section class="services">
+	<section class="wrap services">
+		<div class="label ruled">Three ways to work together</div>
+
 		<article class="service">
-			<h2>Product studio</h2>
-			<p class="what">
-				You get a working product, and a team that can tell you why it was built this way
-				and not some other way. I own the roadmap and bring the engineers.
-			</p>
-			<p class="fit"><b>Fits when</b> you have funding and a real problem, and nobody inside to run the build.</p>
+			<div class="service-head">
+				<h2>Product studio</h2>
+				<p class="fit"><b>Fits when</b> you have funding and a real problem, and nobody inside to run the build.</p>
+			</div>
+			<div class="service-body">
+				<p>
+					You get a working product, and a team that can tell you why it was built this way
+					and not some other way. I own the roadmap and bring the engineers.
+				</p>
+			</div>
 		</article>
 
 		<article class="service">
-			<h2>Fractional product owner</h2>
-			<p class="what">
-				The roadmap stays yours. I take the product owner seat on your team and sit in the
-				meetings: drafting the requirements, designing the experiments, reading what comes
-				back, making the call with your people in the room.
-			</p>
-			<p class="what">
-				A product manager who runs the product day to day is table stakes. The part that's
-				harder to find is ownership: deciding what gets built, in what order, and standing
-				behind the call. I do both.
-			</p>
-			<p class="fit"><b>Fits when</b> you already have engineers, and nobody deciding what they build.</p>
+			<div class="service-head">
+				<h2>Fractional product owner</h2>
+				<p class="fit"><b>Fits when</b> you already have engineers, and nobody deciding what they build.</p>
+			</div>
+			<div class="service-body">
+				<p>
+					The roadmap stays yours. I take the product owner seat on your team and sit in the
+					meetings: drafting the requirements, designing the experiments, reading what comes
+					back, making the call with your people in the room.
+				</p>
+				<p>
+					A product manager who runs the product day to day is table stakes. The part that's
+					harder to find is ownership: deciding what gets built, in what order, and standing
+					behind the call. I do both.
+				</p>
+			</div>
 		</article>
 
 		<article class="service">
-			<h2>Product owner coaching</h2>
-			<p class="what">
-				For the person already doing this job without the title. We draft the roadmap
-				together, run the experiments together, and sit in it together when an idea
-				flops. Then you keep doing it after I'm gone.
-			</p>
-			<p class="fit"><b>Fits when</b> someone on your team has the instincts and has never had anyone to learn the craft from.</p>
+			<div class="service-head">
+				<h2>Product owner coaching</h2>
+				<p class="fit"><b>Fits when</b> someone on your team has the instincts and has never had anyone to learn the craft from.</p>
+			</div>
+			<div class="service-body">
+				<p>
+					For the person already doing this job without the title. We draft the roadmap
+					together, run the experiments together, and sit in it together when an idea
+					flops. Then you keep doing it after I'm gone.
+				</p>
+			</div>
 		</article>
 	</section>
 
-	<section class="content-section">
-		<h2>The studio and the fractional seat look alike from outside</h2>
-		<p>
-			They mostly are alike. The difference is who owns the roadmap. In the studio, it is
-			mine. In the fractional seat, it stays yours, and I sit in it with you.
-		</p>
+	<section class="wrap">
+		<div class="measure how">
+			<h2>How we work</h2>
+			<p>
+				I can do it for you. I can teach you how. What I want is to do it with you: draft
+				the roadmap together, run the experiment, be uncomfortable together and watch our
+				ideas flop.
+			</p>
+			<p>
+				The flopping is the part people skip, and it's the part that pays. A client wanted a
+				chatbot to handle one step of their flow. We looked at it together and
+				realized a plain form would do that same job correctly every single time. The
+				chatbot's real use turned out to be telling us which steps should have been forms
+				all along. That's a smaller product than the one we started with, and a better one,
+				and no amount of prompting would have gotten us there.
+			</p>
+			<p>
+				Every engagement ends the same way. Your team can do this without me.
+			</p>
+		</div>
 	</section>
 
-	<section class="content-section">
-		<h2>How we work</h2>
-		<p>
-			I can do it for you. I can teach you how. What I want is to do it with you: draft
-			the roadmap together, run the experiment, be uncomfortable together and watch our
-			ideas flop.
-		</p>
-		<p>
-			The flopping is the part people skip, and it's the part that pays. A client wanted a
-			chatbot to handle one step of their flow. We looked at it together and
-			realized a plain form would do that same job correctly every single time. The
-			chatbot's real use turned out to be telling us which steps should have been forms
-			all along. That's a smaller product than the one we started with, and a better one,
-			and no amount of prompting would have gotten us there.
-		</p>
-		<p>
-			Every engagement ends the same way. Your team can do this without me.
-		</p>
-	</section>
-
-	<section class="content-section closing">
-		<h2>Start a conversation</h2>
-		<p>
-			If any of this resonates, I'd love to talk. Book 30 minutes and tell me what
-			you're working on.
-		</p>
-		<a href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer" class="cta-button">
-			Find a time →
-		</a>
-		<p class="schedule-note">
-			Prefer email? Write me at <a class="email-link" href="https://www.linkedin.com/in/nicknorena/">hello at this domain</a>.
-		</p>
+	<section class="wrap">
+		<div class="measure closing">
+			<h2>Start a conversation</h2>
+			<p>
+				If any of this resonates, I'd love to talk. Book 30 minutes and tell me what
+				you're working on.
+			</p>
+			<div class="cta-row">
+				<a class="primary" href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer">Find a time &rarr;</a>
+				<span class="aside">Prefer email? Write me at <a class="email-link" href={LINKEDIN_URL}>hello at this domain</a>.</span>
+			</div>
+		</div>
 	</section>
 </MarketingLayout>
 
@@ -115,81 +124,97 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 
 <style>
 	.page-header {
-		padding: 3em 0 2.5em;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		margin-bottom: 3em;
+		display: flex;
+		flex-direction: column;
+		gap: 24px;
+		padding: 96px 0 56px;
 	}
-	.page-header h1 {
-		font-size: 3rem;
-		line-height: 1.1;
-	}
-	.page-header .lede {
-		margin-top: 1em;
-		max-width: 720px;
-		font-size: 1.1rem;
-		line-height: 1.6;
+	.lede {
+		font-size: 22px;
+		line-height: 1.45;
+		color: var(--body);
 	}
 
 	.services {
-		display: grid;
-		gap: 2.5em;
-		margin-bottom: 3em;
-		padding-bottom: 3em;
-		border-bottom: 1px solid rgb(var(--gray-light));
+		display: flex;
+		flex-direction: column;
+		padding-bottom: 32px;
 	}
 	.service {
-		max-width: 720px;
+		display: grid;
+		grid-template-columns: 250px minmax(0, 1fr);
+		gap: 40px;
+		align-items: start;
+		padding: 26px 0;
+		border-bottom: 1px solid var(--rule-light);
 	}
-	.service h2 {
-		font-size: 1.375rem;
-		margin: 0 0 0.4em;
+	.service-head {
+		display: flex;
+		flex-direction: column;
+		gap: 6px;
 	}
-	.service .what {
-		margin: 0 0 0.6em;
+	.service-head h2 {
+		font-size: 26px;
+		line-height: 1.2;
 	}
-	.service .fit {
-		margin: 0;
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
+	.fit {
+		font-size: 16px;
+		line-height: 1.45;
+		color: var(--muted);
+	}
+	.service-body {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+	.service-body p {
+		font-size: 18px;
+		line-height: 1.5;
+		color: var(--body);
 	}
 
-	.content-section {
-		margin-bottom: 3em;
-		padding-bottom: 3em;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		max-width: 720px;
+	.how {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		padding: 32px 0 56px;
 	}
-	.content-section h2 {
-		font-size: 1.5rem;
-		margin-bottom: 0.75em;
+	.how p,
+	.closing p {
+		font-size: 19px;
+		line-height: 1.55;
+		color: var(--body);
 	}
+
 	.closing {
-		border-bottom: none;
-	}
-
-	.cta-button {
-		display: inline-block;
-		margin-top: 0.5em;
-		padding: 0.75em 1.5em;
-		background: var(--accent);
-		color: white;
-		text-decoration: none;
-		border-radius: 8px;
-		font-weight: 700;
-	}
-	.cta-button:hover {
-		background: var(--accent-dark);
-		color: white;
-	}
-	.schedule-note {
-		margin-top: 1.25em;
-		color: rgb(var(--gray));
-		font-size: 0.95rem;
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		padding: 48px 0 72px;
+		border-top: 1px solid var(--rule);
 	}
 
 	@media (max-width: 720px) {
-		.page-header h1 {
-			font-size: 2.25rem;
+		.page-header {
+			padding: 48px 0 40px;
+			gap: 18px;
+		}
+		.lede {
+			font-size: 20px;
+		}
+		.service {
+			grid-template-columns: 1fr;
+			gap: 14px;
+			padding: 22px 0;
+		}
+		.service-head h2 {
+			font-size: 24px;
+		}
+		.how {
+			padding: 24px 0 48px;
+		}
+		.closing {
+			padding: 40px 0 56px;
 		}
 	}
 </style>

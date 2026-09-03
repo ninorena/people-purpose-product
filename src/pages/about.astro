@@ -1,80 +1,104 @@
 ---
 import { Image } from 'astro:assets';
 import MarketingLayout from '../layouts/MarketingLayout.astro';
-import nickPhoto from '../assets/nick-norena.jpeg';
+import portrait from '../assets/nick-portrait.jpg';
+import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 
-const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
+const pastWork = [
+	'Siemens',
+	'Unilever',
+	'General Mills',
+	'United Way',
+	'US Government',
+	'City of Detroit',
+	"Driver's Seat Cooperative",
+];
 ---
 
 <MarketingLayout
 	title="About | People Purpose Product"
 	description="Nick Noreña works as the product owner for mission-driven teams that have funding and no software DNA."
 >
-	<section class="page-header">
-		<h1>About</h1>
-		<p class="lede">
-			<b>People Purpose Product</b> is my practice. I work as the product owner for
-			mission-driven teams that have funding and no software DNA, and this blog is where
-			I think out loud about that work. The purpose is simple: help the helpers of the
-			world have a bigger impact through software.
-		</p>
-		<p class="lede-cta"><a href="/work">The three ways I work with teams →</a></p>
+	<section class="wrap">
+		<div class="measure page-header">
+			<h1>About</h1>
+			<p class="lede">
+				People Purpose Product is my practice. I work as the product owner for
+				mission-driven teams that have funding and no software DNA, and this blog is where
+				I think out loud about that work. The purpose is simple: help the helpers of the
+				world have a bigger impact through software.
+			</p>
+			<a class="lede-cta" href="/work">The three ways I work with teams &rarr;</a>
+		</div>
 	</section>
 
-	<section class="content-section team-section">
-		<h2>Nick Noreña</h2>
-		<div class="person">
-			<Image src={nickPhoto} alt="Nick Noreña" width={320} height={320} class="photo" />
-			<div class="bio">
-				<p class="role">Founder</p>
-				<p>
-					I've spent my career moving between coaching and product management, always close to the people
-					a product serves. I was a founding team member and Head of Coaching at Kromatic, where
-					I worked with more than 30 organizations, including Siemens, Unilever, General Mills,
-					the US Government, and United Way, teaching innovation tools and coaching teams through
-					discovery and validation.
-				</p>
-				<p>
-					As a product manager, I've shipped products that serve people: affordable
-					housing platforms for the City of Detroit and the Bay Area, a resource directory
-					connecting San Francisco families to critical services, and a worker-owned platform
-					advancing economic justice for gig workers with Driver's Seat Cooperative. Most
-					recently, I've been leading product on AI tools that help parents navigate government
-					benefits programs.
-				</p>
-				<p>
-					Now I'm focused on a narrow question: what happens when mission-driven organizations
-					get access to the same tools enterprises have, and use them without losing what makes
-					them different?
-				</p>
+	<section class="wrap person">
+		<div class="photo-col">
+			<Image class="photo" src={portrait} width={560} height={700} alt="Nick Noreña" loading="eager" />
+			<div class="name">Nick Noreña</div>
+			<div class="role">Founder</div>
+		</div>
+		<div class="bio">
+			<p>
+				I've spent my career moving between coaching and product management, always close to the people
+				a product serves. I was a founding team member and Head of Coaching at Kromatic, where
+				I worked with more than 30 organizations, including Siemens, Unilever, General Mills,
+				the US Government, and United Way, teaching innovation tools and coaching teams through
+				discovery and validation.
+			</p>
+			<p>
+				As a product manager, I've shipped products that serve people: affordable
+				housing platforms for the City of Detroit and the Bay Area, a resource directory
+				connecting San Francisco families to critical services, and a worker-owned platform
+				advancing economic justice for gig workers with Driver's Seat Cooperative. Most
+				recently, I've been leading product on AI tools that help parents navigate government
+				benefits programs.
+			</p>
+			<p>
+				Now I'm focused on a narrow question: what happens when mission-driven organizations
+				get access to the same tools enterprises have, and use them without losing what makes
+				them different?
+			</p>
+		</div>
+	</section>
+
+	<section class="wrap">
+		<div class="past-work">
+			<div class="label">Past work with</div>
+			<div class="companies">
+				{pastWork.map((name) => <span>{name}</span>)}
 			</div>
 		</div>
 	</section>
 
-	<section class="content-section closing" id="work-with-me">
-		<h2>Working together</h2>
-		<!-- Collaborators stay unnamed by design (employed elsewhere full-time) -->
-		<p>
-			I build <i>with</i> clients, working side by side to design experiments,
-			make product decisions, and ship together. By the time an engagement ends,
-			your team understands what was built and why, and can maintain and extend it without
-			coming back to me. When a project needs more hands, I bring in a small group of
-			experienced collaborators whose judgment I trust.
-		</p>
-		<p>
-			There are <a href="/work">three ways that happens</a>: a product studio, a fractional
-			product owner seat, and a coaching program for the people already doing the job.
-		</p>
-		<p>
-			If any of this resonates, I'd love to talk. Book a 30 min consultation call to go over
-			what you are working on and how I can help.
-		</p>
-		<a href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer" class="cta-button">
-			Find a time →
-		</a>
-		<p class="schedule-note">
-			Prefer email? Write me at <a class="email-link" href="https://www.linkedin.com/in/nicknorena/">hello at this domain</a>.
-		</p>
+	<section class="wrap">
+		<div class="measure client-call">
+			<div class="label">From a client call this spring</div>
+			<p>
+				A client called me about something I hadn't been hired for. He'd brought me in to
+				build the thing. Now he wanted to know how to run a pilot, how to do early sales,
+				how to put together the story for demo day. That's not how this started, I thought.
+				But you're asking, so let's go. Almost everyone reaches that point alone. You
+				shouldn't have to.
+			</p>
+		</div>
+	</section>
+
+	<section class="wrap">
+		<div class="measure closing">
+			<p>
+				When a project needs more hands, I bring in a small group of experienced
+				collaborators whose judgment I trust.
+			</p>
+			<p>
+				If any of this resonates, I'd love to talk. Book a 30 minute call to go over what
+				you are working on and how I can help.
+			</p>
+			<div class="cta-row">
+				<a class="primary" href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer">Find a time &rarr;</a>
+				<span class="aside">Prefer email? Write me at <a class="email-link" href={LINKEDIN_URL}>hello at this domain</a>.</span>
+			</div>
+		</div>
 	</section>
 </MarketingLayout>
 
@@ -93,103 +117,137 @@ const SCHEDULING_LINK = "https://calendar.app.google/ZgCjgA8Mk3tosTmh9";
 
 <style>
 	.page-header {
-		padding: 3em 0 2.5em;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		margin-bottom: 3em;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 24px;
+		padding: 96px 0 56px;
 	}
-	.page-header h1 {
-		font-size: 3rem;
-		line-height: 1.1;
+	.lede {
+		font-size: 22px;
+		line-height: 1.45;
+		color: var(--body);
 	}
-	.page-header .lede {
-		margin-top: 1em;
-		max-width: 720px;
-		font-size: 1.1rem;
-		line-height: 1.6;
-	}
-	.page-header .lede-cta {
-		margin-top: 0.75em;
-	}
-	.page-header .lede-cta a {
-		font-weight: 700;
-		color: var(--accent);
-		text-decoration: none;
-	}
-	.page-header .lede-cta a:hover {
-		text-decoration: underline;
+	.lede-cta {
+		font-size: 19px;
+		font-weight: 500;
 	}
 
-	.content-section {
-		margin-bottom: 3em;
-		padding-bottom: 3em;
-		border-bottom: 1px solid rgb(var(--gray-light));
-		max-width: 720px;
+	.person {
+		display: grid;
+		grid-template-columns: 280px minmax(0, 1fr);
+		gap: 48px;
+		align-items: start;
+		padding-bottom: 48px;
 	}
-	.content-section h2 {
-		font-size: 1.5rem;
-		margin-bottom: 0.75em;
-	}
-	.closing {
-		border-bottom: none;
-	}
-
-	/* Team layout: photo floats top-right, bio text starts at the left
-	   margin (matching the sections below) and wraps around it */
-	.person::after {
-		content: "";
-		display: block;
-		clear: both;
+	.photo-col {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
 	}
 	.photo {
-		float: right;
-		width: 160px;
-		height: 160px;
-		margin: 0 0 1em 2em;
-		border-radius: 8px;
+		width: 280px;
+		height: 350px;
 		object-fit: cover;
+		display: block;
+		border-radius: 2px;
 	}
-	.bio .role {
-		font-weight: 700;
-		color: rgb(var(--gray));
-		font-size: 0.9rem;
+	.name {
+		font-size: 22px;
+		font-weight: 500;
+		color: var(--text);
+	}
+	.role {
+		font-size: 15px;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		letter-spacing: 0.05em;
-		margin-bottom: 0.75em;
+		color: var(--muted);
+	}
+	.bio {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		max-width: 620px;
+	}
+	.bio p,
+	.closing p {
+		font-size: 19px;
+		line-height: 1.55;
+		color: var(--body);
 	}
 
-	.cta-button {
-		display: inline-block;
-		background: var(--accent);
-		color: white;
-		padding: 0.75em 1.5em;
-		border-radius: 4px;
-		text-decoration: none;
-		font-weight: 700;
-		font-size: 1rem;
-		transition: background 0.2s ease;
+	.past-work {
+		display: flex;
+		flex-direction: column;
+		gap: 22px;
+		padding: 40px 0 48px;
+		border-top: 1px solid var(--rule);
 	}
-	.cta-button:hover {
-		background: var(--accent-dark);
-		color: white;
+	.companies {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 18px 48px;
+		align-items: baseline;
 	}
-	.schedule-note {
-		margin-top: 1em;
-		font-size: 0.95rem;
-		color: rgb(var(--gray));
+	.companies span {
+		font-size: 24px;
+		font-weight: 500;
+		color: var(--company);
+		letter-spacing: 0.01em;
+		white-space: nowrap;
 	}
-	.schedule-note a {
-		color: var(--accent);
+
+	.client-call {
+		display: flex;
+		flex-direction: column;
+		gap: 14px;
+		padding: 40px 0 48px;
+		border-top: 1px solid var(--rule);
+	}
+	.client-call p {
+		font-size: 19px;
+		line-height: 1.55;
+		color: var(--body-soft);
+	}
+
+	.closing {
+		display: flex;
+		flex-direction: column;
+		gap: 18px;
+		padding: 48px 0 72px;
+		border-top: 1px solid var(--rule);
 	}
 
 	@media (max-width: 720px) {
-		.page-header h1 {
-			font-size: 2.25rem;
+		.page-header {
+			padding: 48px 0 40px;
+			gap: 18px;
+		}
+		.lede {
+			font-size: 20px;
+		}
+		.person {
+			grid-template-columns: 1fr;
+			gap: 28px;
+			padding-bottom: 40px;
 		}
 		.photo {
-			float: none;
-			width: 120px;
-			height: 120px;
-			margin: 0 0 1.5em;
+			width: 200px;
+			height: 250px;
+		}
+		.companies {
+			gap: 12px 20px;
+		}
+		.companies span {
+			font-size: 20px;
+			white-space: normal;
+		}
+		.past-work,
+		.client-call {
+			padding: 32px 0 40px;
+		}
+		.closing {
+			padding: 40px 0 56px;
 		}
 	}
 </style>

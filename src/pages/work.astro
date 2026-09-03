@@ -1,47 +1,54 @@
 ---
 import MarketingLayout from '../layouts/MarketingLayout.astro';
 import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
+
+const influences = [
+	{
+		name: 'Shape Up',
+		href: 'https://basecamp.com/shapeup',
+		note: 'from Basecamp. Fixed time, variable scope. It’s why the budget is fixed and the scope moves.',
+	},
+	{
+		name: 'The Lean Startup',
+		href: 'https://theleanstartup.com/',
+		note: 'Eric Ries. The experiment as the unit of work.',
+	},
+	{
+		name: 'Design thinking',
+		href: 'https://designthinking.ideo.com/',
+		note: 'as IDEO teaches it. Put the thing in real hands before you trust your own opinion of it.',
+	},
+	{
+		name: 'Pivotal Labs',
+		href: 'https://en.wikipedia.org/wiki/Pivotal_Labs',
+		note: 'A team learns all of this by doing it next to someone for a few months.',
+	},
+];
 ---
 
 <MarketingLayout
 	title="Work | People Purpose Product"
-	description="Three ways to fill the product owner seat on a funded mission-driven team: a product studio, a fractional seat, and coaching for the person already doing the job."
+	description="Fractional product ownership and product owner coaching for mission-driven teams, and what a typical month looks like."
 >
 	<section class="wrap">
 		<div class="measure page-header">
 			<h1>Work</h1>
 			<p class="lede">
-				You know your impact space better than any consultant will. You have funding, and
-				now you can go build without waiting on a hire. That part is new, and it's good.
-			</p>
-			<p class="lede">
-				Backlogs and milestones are the easy part. The hard part is deciding where to
-				invest, and moving before you have all the information you'd like. That's the
-				gap. Here are three ways to close it, depending on what you already have.
+				I work as the product owner for teams that have funding and a real problem, and
+				either nobody in the seat or someone in it who's never been shown the craft. Here's
+				what that looks like, and how to tell if it fits.
 			</p>
 		</div>
 	</section>
 
 	<section class="wrap services">
-		<div class="label ruled">Three ways to work together</div>
-
-		<article class="service">
-			<div class="service-head">
-				<h2>Product studio</h2>
-				<p class="fit"><b>Fits when</b> you have funding and a real problem, and nobody inside to run the build.</p>
-			</div>
-			<div class="service-body">
-				<p>
-					You get a working product, and a team that can tell you why it was built this way
-					and not some other way. I own the roadmap and bring the engineers.
-				</p>
-			</div>
-		</article>
+		<div class="label ruled">How we work together</div>
 
 		<article class="service">
 			<div class="service-head">
 				<h2>Fractional product owner</h2>
 				<p class="fit"><b>Fits when</b> you already have engineers, and nobody deciding what they build.</p>
+				<p class="fit"><b>Does not fit when</b> you have a mature backlog and want a technical product manager to run it. That's a different hire, and I'll say so on the call.</p>
 			</div>
 			<div class="service-body">
 				<p>
@@ -61,6 +68,7 @@ import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 			<div class="service-head">
 				<h2>Product owner coaching</h2>
 				<p class="fit"><b>Fits when</b> someone on your team has the instincts and has never had anyone to learn the craft from.</p>
+				<p class="fit"><b>Does not fit when</b> nobody on the team has time in the seat. The coaching is the doing, so the person needs hours, not just interest.</p>
 			</div>
 			<div class="service-body">
 				<p>
@@ -73,30 +81,72 @@ import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 	</section>
 
 	<section class="wrap">
-		<div class="measure how">
-			<h2>How we work</h2>
+		<div class="measure month">
+			<h2>What a typical month looks like</h2>
 			<p>
-				I can do it for you. I can teach you how. What I want is to do it with you: draft
-				the roadmap together, run the experiment, be uncomfortable together and watch our
-				ideas flop.
+				I can do it for you. I can teach you how. What works best is doing it with you.
+			</p>
+			<ol class="steps">
+				<li>A 30-minute call. You tell me what you're working on.</li>
+				<li>I sit in on how your product work runs today. One or two meetings.</li>
+				<li>We draft the roadmap together.</li>
+				<li>We write the requirements for the first build, and the experiment that tells us whether it helped.</li>
+				<li>Engineering builds it. We put it in real hands fast.</li>
+				<li>We read what came back together, and we make the call: keep it, change it, or drop it.</li>
+				<li>Steps 4 to 6 repeat. The goal is one experiment a week.</li>
+			</ol>
+			<p>
+				Step 6 is the part people skip, and it's the part that pays. A client wanted a
+				chatbot to handle one step of their flow. We looked at what came back together and
+				realized a plain form would do that job correctly every single time. That's a
+				smaller product than the one we started with, and a better one.
 			</p>
 			<p>
-				The flopping is the part people skip, and it's the part that pays. A client wanted a
-				chatbot to handle one step of their flow. We looked at it together and
-				realized a plain form would do that same job correctly every single time. The
-				chatbot's real use turned out to be telling us which steps should have been forms
-				all along. That's a smaller product than the one we started with, and a better one,
-				and no amount of prompting would have gotten us there.
+				Engagements run month to month. Each month we size the work to your budget. The
+				scope moves. The invoice does not.
 			</p>
+			<div class="lists">
+				<div class="list">
+					<h3>What you get</h3>
+					<ul>
+						<li>A roadmap: what to build, in what order, and why.</li>
+						<li>Requirements for each build, written so engineering can build it once.</li>
+						<li>An experiment design for each build, so we know whether it helped.</li>
+						<li>A readout after each experiment: what we saw, and what we do next.</li>
+						<li>An evidence record a funder can read.</li>
+						<li>A team that can run this loop after I'm gone.</li>
+					</ul>
+				</div>
+				<div class="list">
+					<h3>What I need from you</h3>
+					<ul>
+						<li>One person who can meet weekly, get the right people in the room, and drive a decision.</li>
+						<li>A way to put the product in front of the people it serves.</li>
+						<li>Engineers, or an introduction to some I've worked with.</li>
+					</ul>
+				</div>
+			</div>
 			<p>
-				Every engagement ends the same way. Your team can do this without me.
+				Every engagement ends the same way. Your team runs steps 3 to 6 without me.
 			</p>
 		</div>
 	</section>
 
 	<section class="wrap">
+		<div class="measure influences">
+			<h2>Where this comes from</h2>
+			<p>My school of product ownership had many teachers. A few I keep going back to:</p>
+			<ul>
+				{influences.map((i) => (
+					<li><a href={i.href} target="_blank" rel="noopener noreferrer">{i.name}</a>, {i.note}</li>
+				))}
+			</ul>
+		</div>
+	</section>
+
+	<section class="wrap">
 		<div class="measure closing">
-			<h2>Start a conversation</h2>
+			<h2>Let's talk</h2>
 			<p>
 				If any of this resonates, I'd love to talk. Book 30 minutes and tell me what
 				you're working on.
@@ -151,7 +201,7 @@ import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 	.service-head {
 		display: flex;
 		flex-direction: column;
-		gap: 6px;
+		gap: 10px;
 	}
 	.service-head h2 {
 		font-size: 26px;
@@ -173,17 +223,60 @@ import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 		color: var(--body);
 	}
 
-	.how {
+	.month,
+	.influences {
 		display: flex;
 		flex-direction: column;
 		gap: 18px;
 		padding: 32px 0 56px;
 	}
-	.how p,
+	.month p,
+	.influences p,
 	.closing p {
 		font-size: 19px;
 		line-height: 1.55;
 		color: var(--body);
+	}
+	.steps {
+		padding-left: 1.4em;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-size: 19px;
+		line-height: 1.5;
+		color: var(--body);
+	}
+	.lists {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 40px;
+		padding-top: 8px;
+	}
+	.list {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+	.list h3 {
+		font-size: 20px;
+	}
+	.list ul,
+	.influences ul {
+		padding-left: 1.2em;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		font-size: 17px;
+		line-height: 1.5;
+		color: var(--body-soft);
+	}
+	.influences ul {
+		font-size: 19px;
+		color: var(--body);
+	}
+	.influences {
+		border-top: 1px solid var(--rule);
+		padding-top: 48px;
 	}
 
 	.closing {
@@ -210,8 +303,13 @@ import { LINKEDIN_URL, SCHEDULING_LINK } from '../consts';
 		.service-head h2 {
 			font-size: 24px;
 		}
-		.how {
+		.month,
+		.influences {
 			padding: 24px 0 48px;
+		}
+		.lists {
+			grid-template-columns: 1fr;
+			gap: 24px;
 		}
 		.closing {
 			padding: 40px 0 56px;

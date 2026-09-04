@@ -1,7 +1,7 @@
 ---
 title: "The Grant Becomes the Customer"
 description: "Every free product in this sector has a paying customer. It's usually the funder, and the funder isn't the person you set out to serve."
-pubDate: "Sep 4 2026"
+pubDate: "Sep 3 2026"
 heroImage: "../../assets/lost-osos.jpg"
 ---
 

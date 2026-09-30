@@ -3,6 +3,6 @@
 
 export const SITE_TITLE = 'People Purpose Product';
 export const SITE_DESCRIPTION =
-	'Fractional product ownership and product owner coaching for nonprofits and public-sector teams.';
+	'Fractional product lead and product coaching for nonprofits and impact-focused organizations.';
 export const SCHEDULING_LINK = 'https://calendar.app.google/ZgCjgA8Mk3tosTmh9';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/nicknorena/';

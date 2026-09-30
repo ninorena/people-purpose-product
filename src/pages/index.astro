@@ -14,12 +14,13 @@ const recentPosts = (await getCollection('blog'))
 <MarketingLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<section class="wrap hero">
 		<div class="hero-text">
-			<p class="label">Product ownership for mission-driven teams</p>
-			<h1>Your team already has a product owner. It just isn't anyone's job yet.</h1>
+			<p class="label">Fractional product lead for nonprofits and impact-focused organizations</p>
+			<h1>You know what your community needs. I help you find out what works.</h1>
 			<p class="lede">
-				Between what your users tell you and what ships, someone has to decide what the
-				product does and how it fits your mission. I translate one into the other, build by
-				build, and leave your team doing it without me.
+				Regardless of how cheap software becomes to build, the hard part will always be
+				choosing what is worth building. As your product lead and coach, I turn your ideas
+				into small tests, read what comes back, and help someone on your team keep it going
+				after I'm gone.
 			</p>
 			<div class="cta-block">
 				<a class="primary" href={SCHEDULING_LINK} target="_blank" rel="noopener noreferrer">Book 30 minutes &rarr;</a>
@@ -34,18 +35,13 @@ const recentPosts = (await getCollection('blog'))
 
 	<section class="wrap ways">
 		<div class="label ruled">How we work together</div>
-		<p class="ways-intro">
-			Someone on your team is the product owner today, with or without the title. I can
-			take that seat, share it, or teach it. Which one depends on where you are, and it can
-			change partway through.
-		</p>
 		<div class="ways-grid">
 			<div class="way">
-				<h3><a href="/work">Fractional product owner</a></h3>
-				<p>The roadmap stays yours. I take the product owner seat on your team. Fits when you have engineers, and nobody deciding what they build.</p>
+				<h3><a href="/work">Fractional product lead</a></h3>
+				<p>The roadmap and the final call stay yours. I draft the requirements, design the experiments, and read what comes back. Fits when your team has ideas and engineers, and nobody with the time to turn ideas into tests.</p>
 			</div>
 			<div class="way">
-				<h3><a href="/work">Product owner coaching</a></h3>
+				<h3><a href="/work">Product coaching</a></h3>
 				<p>For the person already doing this job without the title. Fits when someone on your team has the instincts and has never had anyone to learn the craft from.</p>
 			</div>
 		</div>
@@ -100,13 +96,6 @@ const recentPosts = (await getCollection('blog'))
 		display: flex;
 		flex-direction: column;
 		padding-bottom: 72px;
-	}
-	.ways-intro {
-		font-size: 19px;
-		line-height: 1.55;
-		color: var(--body);
-		max-width: 760px;
-		padding-top: 28px;
 	}
 	.ways-grid {
 		display: grid;

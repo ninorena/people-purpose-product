@@ -29,6 +29,23 @@ const influences = [
 		note: 'where a team learns all of this by doing it next to someone for a few months.',
 	},
 ];
+
+// The month chart: one experiment in month 1, two in month 2, four in month 3.
+// Each arc is one experiment; its height grows with its length.
+const base = 150;
+const months = [
+	{ from: 40, to: 347, n: 1 },
+	{ from: 347, to: 653, n: 2 },
+	{ from: 653, to: 960, n: 4 },
+];
+const arcs = months.flatMap((m) => {
+	const len = (m.to - m.from) / m.n;
+	return Array.from({ length: m.n }, (_, i) => {
+		const a = m.from + i * len;
+		const b = a + len;
+		return { d: `M ${a} ${base} Q ${(a + b) / 2} ${base - 0.6 * len} ${b} ${base}`, end: b };
+	});
+});
 ---
 
 <MarketingLayout
@@ -41,94 +58,74 @@ const influences = [
 			<p class="lede">
 				Your product owner knows the community and makes the final call. A product lead brings
 				those ideas to life and tests them quickly, so you know what's worth scaling for your
-				users. Funded teams with a real problem come to me with one of two gaps: nobody leading the
-				product work, or someone in the product owner seat who's never been shown the craft. Here's what I
-				do about each, and how to tell if it fits.
+				users.
+			</p>
+			<p class="lede">
+				That's the job I do for you. When you want it, it's also the job I teach someone on
+				your team, so it keeps going after I'm gone.
 			</p>
 		</div>
 	</section>
 
-	<section class="wrap services">
+	<section class="wrap ways">
 		<div class="label ruled">How we work together</div>
-
-		<article class="service">
-			<h2>Fractional product lead</h2>
-			<p>
-				The roadmap and the final call stay yours. I lead the product work beside your
-				product owner and sit in the meetings: drafting the requirements, designing the
-				experiments, reading what comes back, and bringing a recommendation to each decision.
-			</p>
-			<p>
-				I run the product day to day, which is table stakes. The harder part is getting
-				answers fast enough to matter. I cut the time between an idea and real data, and I
-				set limits on each test, so a wrong idea costs a week and you can still walk it back.
-			</p>
-			<div class="fit-strip">
-				<div class="fit yes">
-					<span class="fit-k">Fits when</span>
-					<span class="fit-v">Your team has ideas and engineers, and nobody with the time to turn ideas into tests.</span>
+		<div class="venn-row">
+			<figure class="venn">
+				<svg viewBox="90 0 500 330" role="img" aria-labelledby="venn-t">
+					<title id="venn-t">Two circles: I do it, and I teach it. The overlap, both, is where we start.</title>
+					<defs>
+						<clipPath id="venn-left"><circle cx="255" cy="165" r="150"></circle></clipPath>
+					</defs>
+					<circle cx="425" cy="165" r="150" class="v-tint" clip-path="url(#venn-left)"></circle>
+					<circle cx="255" cy="165" r="150" class="v-ring"></circle>
+					<circle cx="425" cy="165" r="150" class="v-ring"></circle>
+					<text x="190" y="165" class="v-k" text-anchor="middle" dominant-baseline="middle">I do it</text>
+					<text x="340" y="165" class="v-k v-mid" text-anchor="middle" dominant-baseline="middle">Both</text>
+					<text x="490" y="165" class="v-k" text-anchor="middle" dominant-baseline="middle">I teach it</text>
+				</svg>
+			</figure>
+			<div class="way-notes">
+				<div class="on">
+					<h3>Both <span class="pill">Where we start</span></h3>
+					<p class="sub">Doing and coaching</p>
+					<p>We do the work together, and someone on your team takes it over. Someone has to keep the product going after I leave.</p>
 				</div>
-				<div class="fit">
-					<span class="fit-k">Does not fit when</span>
-					<span class="fit-v">You have a mature backlog and want a technical product manager to run it. That's a different hire, and I'll say so on the call.</span>
+				<div>
+					<h3>I do it</h3>
+					<p class="sub">Fractional product lead</p>
+					<p>I run the tests and bring you a recommendation. Fits when nobody has hours for the product work yet.</p>
 				</div>
-			</div>
-		</article>
-
-		<article class="service">
-			<h2>Product coaching</h2>
-			<p>
-				For the person already doing this job without the title. We draft the roadmap
-				together, run the experiments together, and sit in it together when an idea
-				flops. Then you keep doing it after I'm gone.
-			</p>
-			<div class="fit-strip">
-				<div class="fit yes">
-					<span class="fit-k">Fits when</span>
-					<span class="fit-v">Someone on your team has the instincts and has never had anyone to learn the craft from.</span>
-				</div>
-				<div class="fit">
-					<span class="fit-k">Does not fit when</span>
-					<span class="fit-v">Nobody on the team has time in the seat. The coaching is the doing, so the person needs hours, not just interest.</span>
+				<div>
+					<h3>I teach it</h3>
+					<p class="sub">Product coaching</p>
+					<p>You do the work, and I coach you through it. Fits when someone has the instincts and needs the craft.</p>
 				</div>
 			</div>
-		</article>
+		</div>
 	</section>
 
 	<section class="wrap">
-		<div class="measure month">
-			<h2>What a typical month looks like</h2>
-			<p>
-				I can do it for you. I can teach you how. What works best is doing it with you.
+		<div class="month">
+			<h2>What the first months look like</h2>
+			<p class="measure">
+				At a minimum, one real experiment reaches your users each month. Ultimately, we move as
+				fast as your team can. The first experiment takes the longest to gather results, and we
+				will aim to make every subsequent experiment move faster.
 			</p>
-			<div class="once">
-				<span class="once-k">Before the first month</span>
-				<span>A 30-minute call</span>
-				<span>I sit in on one or two of your meetings</span>
-				<span>We prioritize the risks and assumptions, and draft a roadmap if the project needs one</span>
-			</div>
-			<div class="month-cols">
-				<div class="col every">
-					<div class="col-k">Every week</div>
-					<ol class="week-steps">
-						<li>We read what came back and make the call: keep it, change it, or drop it.</li>
-						<li>We write the next build, and the experiment that tells us whether it helped.</li>
-						<li>We build the smallest thing that tests it: a prototype, a form, or a feature.</li>
-						<li>It goes in real hands.</li>
-					</ol>
-				</div>
-				<div class="col">
-					<div class="col-k">End of the month</div>
-					<ul class="month-end">
-						<li>A readout: what we saw, and what we do next.</li>
-						<li>Engagements run month to month. We size next month's work to your budget. The scope moves. The invoice does not.</li>
-					</ul>
-				</div>
-			</div>
-			<p>
-				When the engagement calls for it, it ends the same way: someone on your team runs
-				the month without me.
-			</p>
+			<figure class="track">
+				<svg viewBox="0 44 1000 150" role="img" aria-labelledby="track-t">
+					<title id="track-t">Three months. One experiment reaches users in the first month, two in the second, and four in the third.</title>
+					{arcs.map((a) => <path d={a.d} class="t-arc"></path>)}
+					<line x1="40" y1="150" x2="960" y2="150" class="t-base"></line>
+					<line x1="347" y1="140" x2="347" y2="160" class="t-tick"></line>
+					<line x1="653" y1="140" x2="653" y2="160" class="t-tick"></line>
+					<circle cx="40" cy="150" r="6" class="t-start"></circle>
+					{arcs.map((a) => <circle cx={a.end} cy="150" r="6" class="t-hands"></circle>)}
+					<text x="193" y="182" class="t-month" text-anchor="middle">Month 1</text>
+					<text x="500" y="182" class="t-month" text-anchor="middle">Month 2</text>
+					<text x="807" y="182" class="t-month" text-anchor="middle">Month 3</text>
+				</svg>
+			</figure>
 		</div>
 	</section>
 
@@ -185,57 +182,117 @@ const influences = [
 		color: var(--body);
 	}
 
-	.services {
+	/* How we work together: the Venn beside one note per region. */
+	.ways {
+		--tint: rgba(63, 107, 79, 0.1);
 		display: flex;
 		flex-direction: column;
-		padding-bottom: 32px;
-	}
-	/* Each service runs the full width: heading, body at the page measure,
-	   then a two-cell strip. The green rule marks the "fits" cell. */
-	.service {
-		display: flex;
-		flex-direction: column;
-		gap: 16px;
-		padding: 30px 0;
-		border-bottom: 1px solid var(--rule-light);
-	}
-	.service h2 {
-		font-size: 26px;
-		line-height: 1.2;
-	}
-	.service p {
-		max-width: var(--measure);
-		font-size: 18px;
-		line-height: 1.5;
-		color: var(--body);
-	}
-	.fit-strip {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 32px;
-		margin-top: 6px;
+		padding-bottom: 56px;
 	}
-	.fit {
+	.venn-row {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		gap: 56px;
+		align-items: center;
+	}
+	.venn {
+		margin: 0;
+	}
+	svg {
+		display: block;
+		width: 100%;
+		height: auto;
+		font-family: "Newsreader", Georgia, serif;
+	}
+	.v-ring {
+		fill: none;
+		stroke: var(--text);
+		stroke-width: 1;
+	}
+	.v-tint {
+		fill: var(--tint);
+	}
+	.v-k {
+		font-size: 24px;
+		fill: var(--text);
+	}
+	.v-mid {
+		fill: var(--link);
+	}
+	.way-notes {
+		display: flex;
+		flex-direction: column;
+	}
+	.way-notes > div {
 		display: flex;
 		flex-direction: column;
 		gap: 4px;
-		padding-top: 12px;
+		padding: 18px 0;
 		border-top: 1px solid var(--rule);
 	}
-	.fit.yes {
+	.way-notes > div.on {
 		border-top-color: var(--link);
 	}
-	.fit-k {
-		font-size: 12px;
-		line-height: 1.4;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
+	.way-notes h3 {
+		font-size: 22px;
+	}
+	.way-notes .on h3 {
+		color: var(--link);
+	}
+	.way-notes .sub {
+		font-size: 16px;
+		font-style: italic;
 		color: var(--muted);
 	}
-	.fit-v {
-		font-size: 16px;
-		line-height: 1.45;
-		color: var(--body-soft);
+	.way-notes p:last-child {
+		font-size: 17px;
+		line-height: 1.5;
+	}
+	.pill {
+		margin-left: 10px;
+		font-size: 11px;
+		line-height: 1;
+		letter-spacing: 0.1em;
+		text-transform: uppercase;
+		color: var(--link);
+		border: 1px solid var(--link);
+		border-radius: 999px;
+		padding: 4px 8px 3px;
+		vertical-align: 3px;
+		white-space: nowrap;
+	}
+
+	/* The month chart: each arc is one experiment, the axis is time. */
+	.track {
+		margin: 8px 0 0;
+	}
+	.t-base {
+		stroke: var(--text);
+		stroke-width: 1.5;
+	}
+	.t-tick {
+		stroke: var(--text);
+		stroke-width: 1;
+	}
+	.t-arc {
+		fill: none;
+		stroke: var(--link);
+		stroke-width: 2.5;
+	}
+	.t-start {
+		fill: var(--bg);
+		stroke: var(--text);
+		stroke-width: 1.5;
+	}
+	.t-hands {
+		fill: var(--link);
+	}
+	.t-month {
+		font-size: 15px;
+		fill: var(--muted);
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
 	}
 
 	.month,
@@ -252,102 +309,17 @@ const influences = [
 		line-height: 1.55;
 		color: var(--body);
 	}
-	/* The month: a "once" line, then every week beside the end of the month. */
-	.once {
-		display: flex;
-		flex-wrap: wrap;
-		gap: 6px 28px;
-		align-items: baseline;
-		padding: 14px 0;
+	.month {
 		border-top: 1px solid var(--rule);
-		border-bottom: 1px solid var(--rule-light);
-		font-size: 16px;
-		color: var(--body-soft);
+		padding-top: 48px;
 	}
-	.once-k,
-	.col-k {
-		font-size: 12px;
-		line-height: 1.4;
-		letter-spacing: 0.12em;
-		text-transform: uppercase;
-		color: var(--muted);
-	}
-	.once-k {
-		flex-basis: 100%;
-	}
-	.once span:not(.once-k)::before {
-		content: '○  ';
-		font-size: 10px;
-		vertical-align: 2px;
-		color: var(--company);
-	}
-	.month-cols {
-		display: grid;
-		grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-		gap: 40px;
-	}
-	.col {
-		display: flex;
-		flex-direction: column;
-		gap: 12px;
-		padding-top: 12px;
-		border-top: 1px solid var(--rule);
-	}
-	.col.every {
-		border-top-color: var(--link);
-	}
-	.week-steps,
-	.month-end {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-		font-size: 18px;
-		line-height: 1.5;
-		color: var(--body);
-	}
-	.week-steps {
-		counter-reset: step;
-	}
-	.week-steps li {
-		display: grid;
-		grid-template-columns: 2.2em minmax(0, 1fr);
-		gap: 8px;
-		counter-increment: step;
-	}
-	.week-steps li::before {
-		content: counter(step) '.';
-		color: var(--muted);
-		font-variant-numeric: tabular-nums;
-	}
-	.lists {
-		display: grid;
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		gap: 40px;
-		padding-top: 8px;
-	}
-	.list {
-		display: flex;
-		flex-direction: column;
-		gap: 10px;
-	}
-	.list h3 {
-		font-size: 20px;
-	}
-	.list ul,
 	.influences ul {
 		padding-left: 1.2em;
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
-		font-size: 17px;
-		line-height: 1.5;
-		color: var(--body-soft);
-	}
-	.influences ul {
 		font-size: 19px;
+		line-height: 1.5;
 		color: var(--body);
 	}
 	.influences {
@@ -371,32 +343,17 @@ const influences = [
 		.lede {
 			font-size: 20px;
 		}
-		.service {
-			gap: 14px;
-			padding: 24px 0;
-		}
-		.service h2 {
-			font-size: 24px;
-		}
-		.fit-strip {
+		.venn-row {
 			grid-template-columns: 1fr;
-			gap: 14px;
+			gap: 24px;
+		}
+		.venn {
+			max-width: 320px;
+			justify-self: center;
 		}
 		.month,
 		.influences {
 			padding: 24px 0 48px;
-		}
-		.lists {
-			grid-template-columns: 1fr;
-			gap: 24px;
-		}
-		.once {
-			flex-direction: column;
-			gap: 6px;
-		}
-		.month-cols {
-			grid-template-columns: 1fr;
-			gap: 24px;
 		}
 		.closing {
 			padding: 40px 0 56px;

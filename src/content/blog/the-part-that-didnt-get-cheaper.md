@@ -31,7 +31,7 @@ I think it's clear that the job can be learned, and the product owner I describe
 
 Another oldie but goodie, and one that feeds my fancy for first principles: in his book "Essentialism", Greg McKeown points out that the word "priority" did not have a plural until quite recently:
 
-> "The word priority came into the English language in the 1400's. It was singular. It meant the very first or prior thing. It stayed singular for the next 500 years. Only in the 1900s did we pluralize the term and start talking about priorities."
+> "The word priority came into the English language in the 1400's. It was singular. It meant the very first or prior thing. It stayed singular for the next five hundred years. Only in the 1900s did we pluralize the term and start talking about priorities."
 
 I love running experiments because an experiment brings the word "priorities" back to the singular. One experiment answers one question, so you have to pick the question first. And running an experiment means someone has to say no A LOT, and own the one priority that is left. That is incredibly uncomfortable, and I find that wading through that discomfort is the crux of learning the job of a product manager.
 
